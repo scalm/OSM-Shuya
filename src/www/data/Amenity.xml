@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="utf-8"?>
+<osm version="0.6" generator="CGImap 0.0.2">
+  <way id="55679221" user="Scalm" uid="218489" visible="true" version="3" changeset="4593636" timestamp="2010-05-03T10:54:11Z">
+  <nd ref="699616312"/>
+  <nd ref="718569052"/>
+  <nd ref="699616315"/>
+  <nd ref="699616314"/>
+  <nd ref="679073281"/>
+  <nd ref="699637042"/>
+  <nd ref="699616311"/>
+  <nd ref="699616312"/>
+  <tag k="amenity" v="place_of_worship"/>
+  <tag k="barrier" v="fence"/>
+  <tag k="denomination" v="orthodox"/>
+  <tag k="name" v="Воскресенский собор"/>
+  <tag k="religion" v="christian"/>
+ </way>
+  <way id="58016518" user="Scalm" uid="218489" visible="true" version="2" changeset="4600343" timestamp="2010-05-03T23:26:35Z">
+  <nd ref="719896165"/>
+  <nd ref="719896071"/>
+  <nd ref="719896091"/>
+  <nd ref="719896164"/>
+  <nd ref="719896155"/>
+  <nd ref="719896115"/>
+  <nd ref="719896129"/>
+  <nd ref="719896079"/>
+  <nd ref="719896100"/>
+  <nd ref="719896176"/>
+  <nd ref="719896073"/>
+  <nd ref="719896148"/>
+  <nd ref="719896165"/>
+  <tag k="addr:housenumber" v="3"/>
+  <tag k="addr:street" v="ул. Северная"/>
+  <tag k="amenity" v="school"/>
+  <tag k="building" v="yes"/>
+ </way>
+  <way id="55677478" user="Scalm" uid="218489" visible="true" version="6" changeset="4789314" timestamp="2010-05-24T01:16:18Z">
+  <nd ref="699594260"/>
+  <nd ref="699594262"/>
+  <nd ref="739512900"/>
+  <nd ref="739513316"/>
+  <nd ref="699594265"/>
+  <nd ref="679073285"/>
+  <nd ref="699594264"/>
+  <nd ref="699594260"/>
+  <tag k="amenity" v="marketplace"/>
+  <tag k="barrier" v="fence"/>
+  <tag k="landuse" v="retail"/>
+  <tag k="name" v="Центральный рынок"/>
+ </way>
+  <way id="58014582" user="Scalm" uid="218489" visible="true" version="1" changeset="4600215" timestamp="2010-05-03T22:53:19Z">
+  <nd ref="719822527"/>
+  <nd ref="719822824"/>
+  <nd ref="719822561"/>
+  <nd ref="719822489"/>
+  <nd ref="719822527"/>
+  <tag k="amenity" v="public_building"/>
+  <tag k="building" v="yes"/>
+ </way>
+  <way id="56082159" user="Scalm" uid="218489" visible="true" version="2" changeset="4905214" timestamp="2010-06-04T23:35:17Z">
+  <nd ref="703907784"/>
+  <nd ref="703907799"/>
+  <nd ref="764718382"/>
+  <nd ref="764718837"/>
+  <nd ref="703907818"/>
+  <nd ref="703907839"/>
+  <nd ref="703907784"/>
+  <tag k="amenity" v="college"/>
+  <tag k="name" v="Шуйский индустриальный техникум"/>
+ </way>
+  <way id="59623267" user="Scalm" uid="218489" visible="true" version="1" changeset="4750138" timestamp="2010-05-19T17:53:08Z">
+  <nd ref="739625362"/>
+  <nd ref="739625483"/>
+  <nd ref="739625237"/>
+  <nd ref="739625084"/>
+  <nd ref="739625362"/>
+  <tag k="amenity" v="bank"/>
+  <tag k="atm" v="yes"/>
+  <tag k="building" v="yes"/>
+  <tag k="name" v="Сбербанк"/>
+ </way>
+  <way id="56035384" user="Scalm" uid="218489" visible="true" version="1" changeset="4489397" timestamp="2010-04-21T18:39:11Z">
+  <nd ref="703389916"/>
+  <nd ref="703389917"/>
+  <nd ref="703389919"/>
+  <nd ref="703389920"/>
+  <nd ref="703389918"/>
+  <nd ref="703389916"/>
+  <tag k="amenity" v="place_of_worship"/>
+  <tag k="denomination" v="orthodox"/>
+  <tag k="name" v="Никольская церковь"/>
+  <tag k="religion" v="christian"/>
+ </way>
+  <way id="58018534" user="Scalm" uid="218489" visible="true" version="1" changeset="4600343" timestamp="2010-05-03T23:26:35Z">
+  <nd ref="719896112"/>
+  <nd ref="719896184"/>
+  <nd ref="719896075"/>
+  <nd ref="719896151"/>
+  <nd ref="719896066"/>
+  <nd ref="719896136"/>
+  <nd ref="719896157"/>
+  <nd ref="719896116"/>
+  <nd ref="719896130"/>
+  <nd ref="719896083"/>
+  <nd ref="719896112"/>
+  <tag k="addr:housenumber" v="3"/>
+  <tag k="addr:street" v="ул. Северная"/>
+  <tag k="amenity" v="school"/>
+  <tag k="building" v="yes"/>
+ </way>
+  <way id="58150836" user="Scalm" uid="218489" visible="true" version="2" changeset="4610236" timestamp="2010-05-05T06:44:45Z">
+  <nd ref="721448512"/>
+  <nd ref="721448472"/>
+  <nd ref="721448490"/>
+  <nd ref="721448482"/>
+  <nd ref="721448512"/>
+  <tag k="addr:housenumber" v="1"/>
+  <tag k="addr:street" v="ул. 1-я Школьная"/>
+  <tag k="amenity" v="school"/>
+  <tag k="building" v="yes"/>
+ </way>
+  <way id="58038362" user="Scalm" uid="218489" visible="true" version="1" changeset="4600497" timestamp="2010-05-04T00:12:45Z">
+  <nd ref="720050489"/>
+  <nd ref="720050656"/>
+  <nd ref="720050421"/>
+  <nd ref="720050457"/>
+  <nd ref="720050555"/>
+  <nd ref="720050721"/>
+  <nd ref="720050791"/>
+  <nd ref="720050755"/>
+  <nd ref="720050623"/>
+  <nd ref="720050489"/>
+  <tag k="amenity" v="kindergarten"/>
+  <tag k="building" v="yes"/>
+ </way>
+  <way id="55807727" user="Scalm" uid="218489" visible="true" version="3" changeset="4793074" timestamp="2010-05-24T12:47:02Z">
+  <nd ref="701070224"/>
+  <nd ref="701070265"/>
+  <nd ref="694584425"/>
+  <nd ref="295898332"/>
+  <nd ref="747076397"/>
+  <nd ref="701070263"/>
+  <nd ref="701070260"/>
+  <nd ref="701070262"/>
+  <nd ref="701070266"/>
+  <nd ref="701070225"/>
+  <nd ref="701070224"/>
+  <tag k="amenity" v="parking"/>
+  <tag k="name" v="Вокзальная площадь"/>
+ </way>
+  <way id="55807741" user="Scalm" uid="218489" visible="true" version="1" changeset="4458965" timestamp="2010-04-18T15:19:16Z">
+  <nd ref="693604811"/>
+  <nd ref="701070281"/>
+  <nd ref="701070283"/>
+  <nd ref="679073285"/>
+  <nd ref="693604811"/>
+  <tag k="amenity" v="parking"/>
+  <tag k="parking" v="surface"/>
+ </way>
+  <way id="55807728" user="Scalm" uid="218489" visible="true" version="3" changeset="4793074" timestamp="2010-05-24T12:47:00Z">
+  <nd ref="701070253"/>
+  <nd ref="701199771"/>
+  <nd ref="701070277"/>
+  <nd ref="701070275"/>
+  <nd ref="701070256"/>
+  <nd ref="701070254"/>
+  <nd ref="701070253"/>
+  <tag k="amenity" v="hospital"/>
+  <tag k="barrier" v="fence"/>
+  <tag k="name" v="Центральная районная больница"/>
+ </way>
+  <way id="55991201" user="an-selm" uid="255715" visible="true" version="3" changeset="4498154" timestamp="2010-04-22T19:48:47Z">
+  <nd ref="702838211"/>
+  <nd ref="702838255"/>
+  <nd ref="702838253"/>
+  <nd ref="702838248"/>
+  <nd ref="702986637"/>
+  <nd ref="702986638"/>
+  <nd ref="702986639"/>
+  <nd ref="702838211"/>
+  <tag k="amenity" v="grave_yard"/>
+  <tag k="denomination" v="orthodox"/>
+  <tag k="landuse" v="cemetery"/>
+  <tag k="name" v="Заречное"/>
+  <tag k="religion" v="christian"/>
+ </way>
+  <way id="55147515" user="Scalm" uid="218489" visible="true" version="2" changeset="4458965" timestamp="2010-04-18T15:19:23Z">
+  <nd ref="693532327"/>
+  <nd ref="694414457"/>
+  <nd ref="694416384"/>
+  <nd ref="694416489"/>
+  <nd ref="693532327"/>
+  <tag k="amenity" v="place_of_worship"/>
+  <tag k="area" v="yes"/>
+  <tag k="landuse" v="recreation_ground"/>
+  <tag k="name" v="Вечный огонь"/>
+ </way>
+  <way id="55807732" user="Scalm" uid="218489" visible="true" version="2" changeset="4460188" timestamp="2010-04-18T17:11:14Z">
+  <nd ref="561304316"/>
+  <nd ref="561304317"/>
+  <nd ref="561304318"/>
+  <nd ref="701210490"/>
+  <nd ref="561304319"/>
+  <nd ref="701210487"/>
+  <nd ref="701210484"/>
+  <nd ref="701210518"/>
+  <nd ref="561304315"/>
+  <nd ref="561304316"/>
+  <tag k="amenity" v="fuel"/>
+ </way>
+  <way id="71132932" user="Scalm" uid="218489" visible="true" version="1" changeset="5409396" timestamp="2010-08-05T15:49:53Z">
+  <nd ref="847019266"/>
+  <nd ref="847019678"/>
+  <nd ref="847019705"/>
+  <nd ref="847019474"/>
+  <nd ref="847019266"/>
+  <tag k="amenity" v="school"/>
+  <tag k="name" v="Школа №20"/>
+ </way>
+  <way id="59422016" user="Scalm" uid="218489" visible="true" version="2" changeset="4743914" timestamp="2010-05-18T23:28:58Z">
+  <nd ref="736872775"/>
+  <nd ref="736872655"/>
+  <nd ref="736872490"/>
+  <nd ref="736872742"/>
+  <nd ref="736872576"/>
+  <nd ref="736872535"/>
+  <nd ref="736872255"/>
+  <nd ref="736872513"/>
+  <nd ref="736872232"/>
+  <nd ref="736872190"/>
+  <nd ref="736872680"/>
+  <nd ref="736872288"/>
+  <nd ref="736872775"/>
+  <tag k="addr:housenumber" v="39"/>
+  <tag k="addr:street" v="ул. Кооперативная"/>
+  <tag k="amenity" v="school"/>
+  <tag k="building" v="yes"/>
+  <tag k="name" v="№7"/>
+ </way>
+  <way id="58018536" user="Scalm" uid="218489" visible="true" version="1" changeset="4600343" timestamp="2010-05-03T23:26:35Z">
+  <nd ref="719896151"/>
+  <nd ref="719896155"/>
+  <nd ref="719896164"/>
+  <nd ref="719896066"/>
+  <nd ref="719896151"/>
+  <tag k="addr:housenumber" v="3"/>
+  <tag k="addr:street" v="ул. Северная"/>
+  <tag k="amenity" v="school"/>
+  <tag k="building" v="yes"/>
+  <tag k="layer" v="1"/>
+ </way>
+  <way id="58014581" user="Scalm" uid="218489" visible="true" version="1" changeset="4600215" timestamp="2010-05-03T22:53:19Z">
+  <nd ref="719822780"/>
+  <nd ref="719822743"/>
+  <nd ref="719822642"/>
+  <nd ref="719822827"/>
+  <nd ref="719822691"/>
+  <nd ref="719822667"/>
+  <nd ref="719822780"/>
+  <tag k="addr:street" v="ул. Центральная"/>
+  <tag k="amenity" v="doctors"/>
+  <tag k="building" v="yes"/>
+ </way>
+  <way id="55544194" user="Scalm" uid="218489" visible="true" version="1" changeset="4435211" timestamp="2010-04-15T22:42:17Z">
+  <nd ref="698074199"/>
+  <nd ref="698074196"/>
+  <nd ref="698074197"/>
+  <nd ref="698074198"/>
+  <nd ref="698074199"/>
+  <tag k="amenity" v="fuel"/>
+  <tag k="area" v="yes"/>
+ </way>
+  <way id="55677476" user="Scalm" uid="218489" visible="true" version="2" changeset="4748995" timestamp="2010-05-19T15:11:10Z">
+  <nd ref="699594257"/>
+  <nd ref="699594261"/>
+  <nd ref="699594259"/>
+  <nd ref="699594256"/>
+  <nd ref="699594257"/>
+  <tag k="amenity" v="cinema"/>
+  <tag k="building" v="yes"/>
+  <tag k="name" v="Родина"/>
+ </way>
+  <node id="295898332" lat="56.8512795" lon="41.3544176" user="an-selm" uid="255715" visible="true" version="4" changeset="4408315" timestamp="2010-04-12T20:05:26Z"/>
+  <node id="561304315" lat="56.8354870" lon="41.3764220" user="an-selm" uid="255715" visible="true" version="2" changeset="4408315" timestamp="2010-04-12T20:08:23Z"/>
+  <node id="561304316" lat="56.8354535" lon="41.3761052" user="an-selm" uid="255715" visible="true" version="2" changeset="4408315" timestamp="2010-04-12T20:08:24Z"/>
+  <node id="561304317" lat="56.8353590" lon="41.3758506" user="an-selm" uid="255715" visible="true" version="2" changeset="4408315" timestamp="2010-04-12T20:08:24Z"/>
+  <node id="561304318" lat="56.8351653" lon="41.3756042" user="an-selm" uid="255715" visible="true" version="2" changeset="4408315" timestamp="2010-04-12T20:08:25Z"/>
+  <node id="561304319" lat="56.8346971" lon="41.3751195" user="an-selm" uid="255715" visible="true" version="2" changeset="4408315" timestamp="2010-04-12T20:08:25Z"/>
+  <node id="634443456" lat="56.8701533" lon="41.2723285" user="Scalm" uid="218489" visible="true" version="2" changeset="4435211" timestamp="2010-04-15T22:42:17Z">
+  <tag k="amenity" v="fuel"/>
+ </node>
+  <node id="677375013" lat="56.8622637" lon="41.3598066" user="Kirill07" uid="176237" visible="true" version="1" changeset="4265897" timestamp="2010-03-29T10:35:50Z">
+  <tag k="amenity" v="parking"/>
+  <tag k="name" v="Стоянка ГРК «ЗОЛОТОЙ ЛЕВ»"/>
+ </node>
+  <node id="679006231" lat="56.8454731" lon="41.3931294" user="Scalm" uid="218489" visible="true" version="5" changeset="4609059" timestamp="2010-05-04T22:50:56Z">
+  <tag k="amenity" v="school"/>
+  <tag k="name" v="ОГОУ &quot;Шуйский детский дом-школа&quot;"/>
+ </node>
+  <node id="679073281" lat="56.8569082" lon="41.3830019" user="Kirill07" uid="176237" visible="true" version="1" changeset="4284198" timestamp="2010-03-31T10:48:35Z"/>
+  <node id="679073285" lat="56.8556595" lon="41.3841712" user="an-selm" uid="255715" visible="true" version="2" changeset="4413747" timestamp="2010-04-13T13:24:05Z"/>
+  <node id="679079060" lat="56.8561762" lon="41.3839618" user="an-selm" uid="255715" visible="true" version="2" changeset="4397585" timestamp="2010-04-11T19:05:32Z">
+  <tag k="amenity" v="place_of_worship"/>
+  <tag k="name" v="Колокольня Воскресенского собора"/>
+  <tag k="religion" v="christian"/>
+  <tag k="tourism" v="attraction"/>
+ </node>
+  <node id="693532327" lat="56.8512294" lon="41.3786391" user="an-selm" uid="255715" visible="true" version="5" changeset="4406455" timestamp="2010-04-12T17:21:43Z"/>
+  <node id="693547060" lat="56.8471419" lon="41.3798177" user="an-selm" uid="255715" visible="true" version="3" changeset="4406455" timestamp="2010-04-12T17:21:46Z">
+  <tag k="amenity" v="bank;atm"/>
+  <tag k="name" v="Сбербанк"/>
+ </node>
+  <node id="693547368" lat="56.8252035" lon="41.3515859" user="an-selm" uid="255715" visible="true" version="3" changeset="4406455" timestamp="2010-04-12T17:22:07Z">
+  <tag k="amenity" v="fuel"/>
+  <tag k="name" v="PLUS"/>
+ </node>
+  <node id="693604811" lat="56.8557116" lon="41.3846049" user="an-selm" uid="255715" visible="true" version="2" changeset="4406455" timestamp="2010-04-12T17:23:23Z"/>
+  <node id="694414457" lat="56.8504702" lon="41.3789231" user="an-selm" uid="255715" visible="true" version="1" changeset="4406455" timestamp="2010-04-12T17:21:45Z"/>
+  <node id="694416384" lat="56.8505170" lon="41.3797560" user="an-selm" uid="255715" visible="true" version="1" changeset="4406455" timestamp="2010-04-12T17:23:36Z"/>
+  <node id="694416489" lat="56.8513389" lon="41.3796129" user="an-selm" uid="255715" visible="true" version="1" changeset="4406455" timestamp="2010-04-12T17:23:38Z"/>
+  <node id="694584425" lat="56.8513422" lon="41.3541948" user="an-selm" uid="255715" visible="true" version="1" changeset="4408315" timestamp="2010-04-12T20:05:26Z"/>
+  <node id="694584720" lat="56.8542282" lon="41.3534246" user="Scalm" uid="218489" visible="true" version="2" changeset="4482477" timestamp="2010-04-20T22:36:19Z">
+  <tag k="amenity" v="fuel"/>
+  <tag k="name" v="Газпромнефть"/>
+ </node>
+  <node id="694588939" lat="56.8298189" lon="41.3834330" user="an-selm" uid="255715" visible="true" version="1" changeset="4408315" timestamp="2010-04-12T20:09:13Z">
+  <tag k="amenity" v="fuel"/>
+ </node>
+  <node id="698074196" lat="56.8703319" lon="41.2731893" user="Scalm" uid="218489" visible="true" version="1" changeset="4435211" timestamp="2010-04-15T22:42:17Z"/>
+  <node id="698074197" lat="56.8696957" lon="41.2727570" user="Scalm" uid="218489" visible="true" version="1" changeset="4435211" timestamp="2010-04-15T22:42:17Z"/>
+  <node id="698074198" lat="56.8699192" lon="41.2716556" user="Scalm" uid="218489" visible="true" version="1" changeset="4435211" timestamp="2010-04-15T22:42:17Z"/>
+  <node id="698074199" lat="56.8705554" lon="41.2720879" user="Scalm" uid="218489" visible="true" version="1" changeset="4435211" timestamp="2010-04-15T22:42:17Z"/>
+  <node id="699594256" lat="56.8544255" lon="41.3808401" user="Scalm" uid="218489" visible="true" version="1" changeset="4445212" timestamp="2010-04-17T07:55:53Z"/>
+  <node id="699594257" lat="56.8547689" lon="41.3806941" user="Scalm" uid="218489" visible="true" version="1" changeset="4445212" timestamp="2010-04-17T07:55:53Z"/>
+  <node id="699594258" lat="56.8551843" lon="41.3801538" user="Scalm" uid="218489" visible="true" version="2" changeset="4578305" timestamp="2010-05-01T18:57:18Z">
+  <tag k="amenity" v="fountain"/>
+ </node>
+  <node id="699594259" lat="56.8544851" lon="41.3816365" user="Scalm" uid="218489" visible="true" version="1" changeset="4445212" timestamp="2010-04-17T07:55:53Z"/>
+  <node id="699594260" lat="56.8544821" lon="41.3824678" user="Scalm" uid="218489" visible="true" version="2" changeset="4748995" timestamp="2010-05-19T15:11:10Z"/>
+  <node id="699594261" lat="56.8548544" lon="41.3814974" user="Scalm" uid="218489" visible="true" version="1" changeset="4445212" timestamp="2010-04-17T07:55:53Z"/>
+  <node id="699594262" lat="56.8549467" lon="41.3822943" user="Scalm" uid="218489" visible="true" version="1" changeset="4445212" timestamp="2010-04-17T07:55:53Z"/>
+  <node id="699594264" lat="56.8547194" lon="41.3845281" user="Scalm" uid="218489" visible="true" version="2" changeset="4748995" timestamp="2010-05-19T15:11:14Z"/>
+  <node id="699594265" lat="56.8555970" lon="41.3835845" user="Scalm" uid="218489" visible="true" version="1" changeset="4445212" timestamp="2010-04-17T07:55:53Z"/>
+  <node id="699616311" lat="56.8559895" lon="41.3834101" user="Scalm" uid="218489" visible="true" version="1" changeset="4445518" timestamp="2010-04-17T08:44:27Z"/>
+  <node id="699616312" lat="56.8561152" lon="41.3844923" user="Scalm" uid="218489" visible="true" version="1" changeset="4445518" timestamp="2010-04-17T08:44:27Z"/>
+  <node id="699616314" lat="56.8573466" lon="41.3828337" user="Scalm" uid="218489" visible="true" version="1" changeset="4445518" timestamp="2010-04-17T08:44:27Z"/>
+  <node id="699616315" lat="56.8574787" lon="41.3838731" user="Scalm" uid="218489" visible="true" version="1" changeset="4445518" timestamp="2010-04-17T08:44:27Z"/>
+  <node id="699637042" lat="56.8562409" lon="41.3832984" user="Scalm" uid="218489" visible="true" version="1" changeset="4445923" timestamp="2010-04-17T09:37:41Z"/>
+  <node id="701070224" lat="56.8507569" lon="41.3522571" user="Scalm" uid="218489" visible="true" version="1" changeset="4458965" timestamp="2010-04-18T15:19:13Z"/>
+  <node id="701070225" lat="56.8504554" lon="41.3521885" user="Scalm" uid="218489" visible="true" version="1" changeset="4458965" timestamp="2010-04-18T15:19:13Z"/>
+  <node id="701070253" lat="56.8416682" lon="41.3748064" user="Scalm" uid="218489" visible="true" version="2" changeset="4460092" timestamp="2010-04-18T17:01:47Z"/>
+  <node id="701070254" lat="56.8410932" lon="41.3773384" user="Scalm" uid="218489" visible="true" version="2" changeset="4460092" timestamp="2010-04-18T17:01:47Z"/>
+  <node id="701070256" lat="56.8410689" lon="41.3793077" user="Scalm" uid="218489" visible="true" version="2" changeset="4460092" timestamp="2010-04-18T17:01:47Z"/>
+  <node id="701070260" lat="56.8495359" lon="41.3533785" user="Scalm" uid="218489" visible="true" version="1" changeset="4458965" timestamp="2010-04-18T15:19:14Z"/>
+  <node id="701070262" lat="56.8497191" lon="41.3529648" user="Scalm" uid="218489" visible="true" version="1" changeset="4458965" timestamp="2010-04-18T15:19:14Z"/>
+  <node id="701070263" lat="56.8502109" lon="41.3536283" user="Scalm" uid="218489" visible="true" version="1" changeset="4458965" timestamp="2010-04-18T15:19:14Z"/>
+  <node id="701070265" lat="56.8507569" lon="41.3531574" user="Scalm" uid="218489" visible="true" version="1" changeset="4458965" timestamp="2010-04-18T15:19:14Z"/>
+  <node id="701070266" lat="56.8503957" lon="41.3531468" user="Scalm" uid="218489" visible="true" version="1" changeset="4458965" timestamp="2010-04-18T15:19:14Z"/>
+  <node id="701070275" lat="56.8446439" lon="41.3788235" user="Scalm" uid="218489" visible="true" version="1" changeset="4458965" timestamp="2010-04-18T15:19:14Z"/>
+  <node id="701070277" lat="56.8444338" lon="41.3745230" user="Scalm" uid="218489" visible="true" version="1" changeset="4458965" timestamp="2010-04-18T15:19:14Z"/>
+  <node id="701070281" lat="56.8547989" lon="41.3849982" user="Scalm" uid="218489" visible="true" version="1" changeset="4458965" timestamp="2010-04-18T15:19:14Z"/>
+  <node id="701070283" lat="56.8547432" lon="41.3845197" user="Scalm" uid="218489" visible="true" version="1" changeset="4458965" timestamp="2010-04-18T15:19:14Z"/>
+  <node id="701199771" lat="56.8437814" lon="41.3745649" user="Scalm" uid="218489" visible="true" version="1" changeset="4460092" timestamp="2010-04-18T17:01:46Z"/>
+  <node id="701210484" lat="56.8354082" lon="41.3774716" user="Scalm" uid="218489" visible="true" version="1" changeset="4460188" timestamp="2010-04-18T17:11:13Z"/>
+  <node id="701210487" lat="56.8350088" lon="41.3767407" user="Scalm" uid="218489" visible="true" version="1" changeset="4460188" timestamp="2010-04-18T17:11:13Z"/>
+  <node id="701210490" lat="56.8349470" lon="41.3753782" user="Scalm" uid="218489" visible="true" version="1" changeset="4460188" timestamp="2010-04-18T17:11:13Z"/>
+  <node id="701210518" lat="56.8354313" lon="41.3771642" user="Scalm" uid="218489" visible="true" version="1" changeset="4460188" timestamp="2010-04-18T17:11:13Z"/>
+  <node id="702838211" lat="56.8544129" lon="41.3491394" user="Scalm" uid="218489" visible="true" version="2" changeset="4482477" timestamp="2010-04-20T22:36:18Z"/>
+  <node id="702838248" lat="56.8552432" lon="41.3462504" user="Scalm" uid="218489" visible="true" version="2" changeset="4482477" timestamp="2010-04-20T22:36:18Z"/>
+  <node id="702838253" lat="56.8567654" lon="41.3475522" user="Scalm" uid="218489" visible="true" version="1" changeset="4481096" timestamp="2010-04-20T19:58:39Z"/>
+  <node id="702838255" lat="56.8563422" lon="41.3503733" user="Scalm" uid="218489" visible="true" version="2" changeset="4482477" timestamp="2010-04-20T22:36:18Z"/>
+  <node id="702986637" lat="56.8546293" lon="41.3458435" user="Scalm" uid="218489" visible="true" version="1" changeset="4482477" timestamp="2010-04-20T22:36:16Z"/>
+  <node id="702986638" lat="56.8545159" lon="41.3464082" user="Scalm" uid="218489" visible="true" version="1" changeset="4482477" timestamp="2010-04-20T22:36:16Z"/>
+  <node id="702986639" lat="56.8549695" lon="41.3467654" user="Scalm" uid="218489" visible="true" version="1" changeset="4482477" timestamp="2010-04-20T22:36:16Z"/>
+  <node id="703389916" lat="56.8674847" lon="41.3402798" user="Scalm" uid="218489" visible="true" version="1" changeset="4489397" timestamp="2010-04-21T18:39:05Z"/>
+  <node id="703389917" lat="56.8675409" lon="41.3407816" user="Scalm" uid="218489" visible="true" version="1" changeset="4489397" timestamp="2010-04-21T18:39:05Z"/>
+  <node id="703389918" lat="56.8670551" lon="41.3404128" user="Scalm" uid="218489" visible="true" version="1" changeset="4489397" timestamp="2010-04-21T18:39:05Z"/>
+  <node id="703389919" lat="56.8675343" lon="41.3418396" user="Scalm" uid="218489" visible="true" version="1" changeset="4489397" timestamp="2010-04-21T18:39:05Z"/>
+  <node id="703389920" lat="56.8670452" lon="41.3417066" user="Scalm" uid="218489" visible="true" version="1" changeset="4489397" timestamp="2010-04-21T18:39:05Z"/>
+  <node id="703907784" lat="56.8582353" lon="41.3589147" user="Scalm" uid="218489" visible="true" version="2" changeset="4905214" timestamp="2010-06-04T23:35:17Z"/>
+  <node id="703907799" lat="56.8588391" lon="41.3608753" user="Scalm" uid="218489" visible="true" version="2" changeset="4905214" timestamp="2010-06-04T23:35:17Z"/>
+  <node id="703907818" lat="56.8581340" lon="41.3600058" user="an-selm" uid="255715" visible="true" version="1" changeset="4498482" timestamp="2010-04-22T20:20:20Z"/>
+  <node id="703907839" lat="56.8579626" lon="41.3596824" user="Scalm" uid="218489" visible="true" version="2" changeset="4905214" timestamp="2010-06-04T23:35:17Z"/>
+  <node id="703948147" lat="56.8513590" lon="41.3537378" user="an-selm" uid="255715" visible="true" version="1" changeset="4498696" timestamp="2010-04-22T20:40:36Z">
+  <tag k="amenity" v="bus_station"/>
+  <tag k="name" v="Автостанция"/>
+ </node>
+  <node id="703948159" lat="56.8569979" lon="41.3498691" user="an-selm" uid="255715" visible="true" version="1" changeset="4498696" timestamp="2010-04-22T20:40:36Z">
+  <tag k="amenity" v="fuel"/>
+  <tag k="name" v="Лукойл"/>
+ </node>
+  <node id="703948342" lat="56.8350530" lon="41.3765014" user="an-selm" uid="255715" visible="true" version="1" changeset="4498696" timestamp="2010-04-22T20:40:45Z">
+  <tag k="amenity" v="fuel"/>
+ </node>
+  <node id="704945727" lat="56.8514034" lon="41.3936181" user="Scalm" uid="218489" visible="true" version="2" changeset="4508627" timestamp="2010-04-24T00:22:57Z">
+  <tag k="amenity" v="school"/>
+  <tag k="name" v="Детская художественная школа"/>
+ </node>
+  <node id="704945730" lat="56.8559654" lon="41.3905146" user="Scalm" uid="218489" visible="true" version="2" changeset="4752481" timestamp="2010-05-19T21:56:04Z">
+  <tag k="amenity" v="university"/>
+  <tag k="name" v="Факультет Искусств ШГПУ"/>
+ </node>
+  <node id="706729268" lat="56.8610664" lon="41.3951962" user="Scalm" uid="218489" visible="true" version="2" changeset="4537390" timestamp="2010-04-27T00:05:13Z">
+  <tag k="amenity" v="place_of_worship"/>
+  <tag k="historic" v="memorial"/>
+  <tag k="name" v="Мемориал воинам, павшим в годы Великой Отечественной войны 1941-1945 гг."/>
+ </node>
+  <node id="715707958" lat="56.8333125" lon="41.3998203" user="Scalm" uid="218489" visible="true" version="1" changeset="4577109" timestamp="2010-05-01T16:55:19Z">
+  <tag k="amenity" v="university"/>
+  <tag k="name" v="Шуйский Государственный Педагогический Университет"/>
+ </node>
+  <node id="715795118" lat="56.8648726" lon="41.2937920" user="Scalm" uid="218489" visible="true" version="1" changeset="4578305" timestamp="2010-05-01T18:57:11Z">
+  <tag k="amenity" v="fire_station"/>
+ </node>
+  <node id="715795119" lat="56.8633839" lon="41.2952746" user="Scalm" uid="218489" visible="true" version="2" changeset="4600326" timestamp="2010-05-03T23:22:12Z">
+  <tag k="amenity" v="post_office"/>
+ </node>
+  <node id="715795122" lat="56.8650218" lon="41.2966441" user="Scalm" uid="218489" visible="true" version="2" changeset="4600215" timestamp="2010-05-03T22:53:23Z">
+  <tag k="amenity" v="doctors"/>
+ </node>
+  <node id="715795124" lat="56.8638780" lon="41.2971401" user="Scalm" uid="218489" visible="true" version="1" changeset="4578305" timestamp="2010-05-01T18:57:11Z">
+  <tag k="amenity" v="bench"/>
+ </node>
+  <node id="715795127" lat="56.8641112" lon="41.2981078" user="Scalm" uid="218489" visible="true" version="2" changeset="4598880" timestamp="2010-05-03T20:23:32Z">
+  <tag k="amenity" v="cinema"/>
+ </node>
+  <node id="715795128" lat="56.8641876" lon="41.2981300" user="Scalm" uid="218489" visible="true" version="2" changeset="4598880" timestamp="2010-05-03T20:23:32Z">
+  <tag k="amenity" v="nightclub"/>
+ </node>
+  <node id="715795129" lat="56.8641113" lon="41.2979895" user="Scalm" uid="218489" visible="true" version="2" changeset="4598880" timestamp="2010-05-03T20:23:32Z">
+  <tag k="amenity" v="theatre"/>
+ </node>
+  <node id="715795130" lat="56.8641842" lon="41.2979925" user="Scalm" uid="218489" visible="true" version="2" changeset="4598880" timestamp="2010-05-03T20:23:32Z">
+  <tag k="amenity" v="public_building"/>
+ </node>
+  <node id="715795134" lat="56.8638039" lon="41.3005785" user="Scalm" uid="218489" visible="true" version="1" changeset="4578305" timestamp="2010-05-01T18:57:12Z">
+  <tag k="amenity" v="shelter"/>
+ </node>
+  <node id="715795135" lat="56.8639242" lon="41.3009752" user="Scalm" uid="218489" visible="true" version="2" changeset="4600215" timestamp="2010-05-03T22:53:23Z">
+  <tag k="amenity" v="bar"/>
+  <tag k="name" v="Оазис"/>
+ </node>
+  <node id="715795137" lat="56.8650318" lon="41.3018711" user="Scalm" uid="218489" visible="true" version="1" changeset="4578305" timestamp="2010-05-01T18:57:12Z">
+  <tag k="amenity" v="waste_disposal"/>
+ </node>
+  <node id="715795143" lat="56.8653262" lon="41.2947818" user="Scalm" uid="218489" visible="true" version="1" changeset="4578305" timestamp="2010-05-01T18:57:12Z">
+  <tag k="amenity" v="waste_disposal"/>
+ </node>
+  <node id="715795144" lat="56.8658093" lon="41.2966594" user="Scalm" uid="218489" visible="true" version="1" changeset="4578305" timestamp="2010-05-01T18:57:12Z">
+  <tag k="amenity" v="townhall"/>
+  <tag k="name" v="Администрация китовского сельского поселения"/>
+ </node>
+  <node id="715795145" lat="56.8663209" lon="41.2962453" user="Scalm" uid="218489" visible="true" version="3" changeset="4600497" timestamp="2010-05-04T00:12:50Z">
+  <tag k="amenity" v="kindergarten"/>
+  <tag k="name" v="Детский сад &quot;Улыбка&quot;"/>
+ </node>
+  <node id="715795151" lat="56.8660474" lon="41.2980350" user="Scalm" uid="218489" visible="true" version="2" changeset="4600326" timestamp="2010-05-03T23:22:12Z">
+  <tag k="amenity" v="school"/>
+  <tag k="name" v="Китовская школа"/>
+ </node>
+  <node id="715795152" lat="56.8656055" lon="41.2995148" user="Scalm" uid="218489" visible="true" version="2" changeset="4600326" timestamp="2010-05-03T23:22:11Z">
+  <tag k="amenity" v="arts_centre"/>
+  <tag k="name" v="Детский дом творчества"/>
+ </node>
+  <node id="715795171" lat="56.8540225" lon="41.3754109" user="Scalm" uid="218489" visible="true" version="2" changeset="4748995" timestamp="2010-05-19T15:11:10Z">
+  <tag k="amenity" v="post_office"/>
+  <tag k="name" v="Почтампт"/>
+ </node>
+  <node id="715795176" lat="56.8530736" lon="41.3807962" user="Scalm" uid="218489" visible="true" version="1" changeset="4578305" timestamp="2010-05-01T18:57:13Z">
+  <tag k="amenity" v="bank"/>
+  <tag k="atm" v="yes"/>
+  <tag k="name" v="Сбербанк"/>
+ </node>
+  <node id="715795180" lat="56.8540842" lon="41.3834300" user="Scalm" uid="218489" visible="true" version="2" changeset="4748995" timestamp="2010-05-19T15:11:10Z">
+  <tag k="amenity" v="pharmacy"/>
+ </node>
+  <node id="715795185" lat="56.8553122" lon="41.3757012" user="Scalm" uid="218489" visible="true" version="1" changeset="4578305" timestamp="2010-05-01T18:57:14Z">
+  <tag k="amenity" v="townhall"/>
+  <tag k="name" v="Районная администрация"/>
+ </node>
+  <node id="715795188" lat="56.8542381" lon="41.3844553" user="Scalm" uid="218489" visible="true" version="2" changeset="4604650" timestamp="2010-05-04T14:27:14Z">
+  <tag k="amenity" v="bank"/>
+  <tag k="atm" v="no"/>
+  <tag k="name" v="Совкомбанк"/>
+ </node>
+  <node id="715801288" lat="56.8379098" lon="41.3391039" user="Scalm" uid="218489" visible="true" version="1" changeset="4578419" timestamp="2010-05-01T19:10:00Z">
+  <tag k="amenity" v="school"/>
+  <tag k="name" v="Школа №20"/>
+ </node>
+  <node id="715801290" lat="56.8343332" lon="41.3858109" user="Scalm" uid="218489" visible="true" version="1" changeset="4578419" timestamp="2010-05-01T19:10:13Z">
+  <tag k="amenity" v="fire_station"/>
+  <tag k="fixme" v="уточнить местоположение"/>
+ </node>
+  <node id="715801291" lat="56.8385223" lon="41.3920725" user="Scalm" uid="218489" visible="true" version="2" changeset="4721807" timestamp="2010-05-16T19:54:44Z">
+  <tag k="amenity" v="pharmacy"/>
+ </node>
+  <node id="715801294" lat="56.8567813" lon="41.3859608" user="Scalm" uid="218489" visible="true" version="1" changeset="4578419" timestamp="2010-05-01T19:10:13Z">
+  <tag k="amenity" v="school"/>
+  <tag k="name" v="Гимназия №1"/>
+ </node>
+  <node id="715801295" lat="56.8346388" lon="41.3971353" user="Scalm" uid="218489" visible="true" version="3" changeset="4743914" timestamp="2010-05-18T23:29:01Z">
+  <tag k="amenity" v="school"/>
+  <tag k="name" v="Школа №7"/>
+ </node>
+  <node id="718569052" lat="56.8571147" lon="41.3840384" user="Scalm" uid="218489" visible="true" version="1" changeset="4593636" timestamp="2010-05-03T10:54:02Z"/>
+  <node id="719822489" lat="56.8640397" lon="41.2982000" user="Scalm" uid="218489" visible="true" version="2" changeset="4600326" timestamp="2010-05-03T23:22:11Z"/>
+  <node id="719822527" lat="56.8640663" lon="41.2978242" user="Scalm" uid="218489" visible="true" version="2" changeset="4600326" timestamp="2010-05-03T23:22:11Z"/>
+  <node id="719822561" lat="56.8642908" lon="41.2982596" user="Scalm" uid="218489" visible="true" version="2" changeset="4600326" timestamp="2010-05-03T23:22:12Z"/>
+  <node id="719822642" lat="56.8649493" lon="41.2968629" user="Scalm" uid="218489" visible="true" version="1" changeset="4600215" timestamp="2010-05-03T22:53:07Z">
+  <tag k="building" v="entrance"/>
+ </node>
+  <node id="719822667" lat="56.8650807" lon="41.2965214" user="Scalm" uid="218489" visible="true" version="1" changeset="4600215" timestamp="2010-05-03T22:53:08Z"/>
+  <node id="719822691" lat="56.8649701" lon="41.2965001" user="Scalm" uid="218489" visible="true" version="1" changeset="4600215" timestamp="2010-05-03T22:53:08Z"/>
+  <node id="719822743" lat="56.8649388" lon="41.2970457" user="Scalm" uid="218489" visible="true" version="1" changeset="4600215" timestamp="2010-05-03T22:53:09Z"/>
+  <node id="719822780" lat="56.8650493" lon="41.2970669" user="Scalm" uid="218489" visible="true" version="1" changeset="4600215" timestamp="2010-05-03T22:53:10Z"/>
+  <node id="719822824" lat="56.8643174" lon="41.2978837" user="Scalm" uid="218489" visible="true" version="2" changeset="4600326" timestamp="2010-05-03T23:22:11Z"/>
+  <node id="719822827" lat="56.8649626" lon="41.2966307" user="Scalm" uid="218489" visible="true" version="1" changeset="4600215" timestamp="2010-05-03T22:53:10Z">
+  <tag k="building" v="entrance"/>
+ </node>
+  <node id="719896066" lat="56.8659253" lon="41.2986537" user="Scalm" uid="218489" visible="true" version="1" changeset="4600326" timestamp="2010-05-03T23:22:07Z"/>
+  <node id="719896071" lat="56.8655710" lon="41.2984568" user="Scalm" uid="218489" visible="true" version="1" changeset="4600326" timestamp="2010-05-03T23:22:07Z"/>
+  <node id="719896073" lat="56.8657039" lon="41.2994507" user="Scalm" uid="218489" visible="true" version="1" changeset="4600326" timestamp="2010-05-03T23:22:07Z"/>
+  <node id="719896075" lat="56.8658910" lon="41.2990266" user="Scalm" uid="218489" visible="true" version="1" changeset="4600326" timestamp="2010-05-03T23:22:07Z"/>
+  <node id="719896079" lat="56.8658895" lon="41.2999046" user="Scalm" uid="218489" visible="true" version="1" changeset="4600326" timestamp="2010-05-03T23:22:07Z"/>
+  <node id="719896083" lat="56.8663118" lon="41.2987922" user="Scalm" uid="218489" visible="true" version="1" changeset="4600326" timestamp="2010-05-03T23:22:07Z"/>
+  <node id="719896091" lat="56.8657952" lon="41.2985211" user="Scalm" uid="218489" visible="true" version="1" changeset="4600326" timestamp="2010-05-03T23:22:07Z"/>
+  <node id="719896100" lat="56.8657494" lon="41.2998644" user="Scalm" uid="218489" visible="true" version="1" changeset="4600326" timestamp="2010-05-03T23:22:07Z"/>
+  <node id="719896112" lat="56.8661064" lon="41.2987334" user="Scalm" uid="218489" visible="true" version="1" changeset="4600326" timestamp="2010-05-03T23:22:08Z"/>
+  <node id="719896115" lat="56.8657265" lon="41.2993160" user="Scalm" uid="218489" visible="true" version="1" changeset="4600326" timestamp="2010-05-03T23:22:08Z"/>
+  <node id="719896116" lat="56.8661201" lon="41.2984352" user="Scalm" uid="218489" visible="true" version="1" changeset="4600326" timestamp="2010-05-03T23:22:08Z"/>
+  <node id="719896129" lat="56.8659348" lon="41.2993757" user="Scalm" uid="218489" visible="true" version="1" changeset="4600326" timestamp="2010-05-03T23:22:08Z"/>
+  <node id="719896130" lat="56.8663371" lon="41.2984973" user="Scalm" uid="218489" visible="true" version="1" changeset="4600326" timestamp="2010-05-03T23:22:08Z"/>
+  <node id="719896136" lat="56.8659926" lon="41.2978673" user="Scalm" uid="218489" visible="true" version="1" changeset="4600326" timestamp="2010-05-03T23:22:08Z"/>
+  <node id="719896148" lat="56.8656727" lon="41.2998159" user="Scalm" uid="218489" visible="true" version="1" changeset="4600326" timestamp="2010-05-03T23:22:09Z"/>
+  <node id="719896151" lat="56.8659134" lon="41.2987652" user="Scalm" uid="218489" visible="true" version="1" changeset="4600326" timestamp="2010-05-03T23:22:09Z"/>
+  <node id="719896155" lat="56.8657770" lon="41.2987261" user="Scalm" uid="218489" visible="true" version="1" changeset="4600326" timestamp="2010-05-03T23:22:09Z"/>
+  <node id="719896157" lat="56.8661645" lon="41.2979165" user="Scalm" uid="218489" visible="true" version="1" changeset="4600326" timestamp="2010-05-03T23:22:09Z"/>
+  <node id="719896164" lat="56.8657873" lon="41.2986142" user="Scalm" uid="218489" visible="true" version="1" changeset="4600326" timestamp="2010-05-03T23:22:09Z"/>
+  <node id="719896165" lat="56.8654599" lon="41.2997550" user="Scalm" uid="218489" visible="true" version="1" changeset="4600326" timestamp="2010-05-03T23:22:09Z"/>
+  <node id="719896176" lat="56.8657828" lon="41.2994733" user="Scalm" uid="218489" visible="true" version="1" changeset="4600326" timestamp="2010-05-03T23:22:09Z"/>
+  <node id="719896184" lat="56.8660767" lon="41.2990798" user="Scalm" uid="218489" visible="true" version="1" changeset="4600326" timestamp="2010-05-03T23:22:09Z"/>
+  <node id="720050421" lat="56.8664159" lon="41.2960047" user="Scalm" uid="218489" visible="true" version="1" changeset="4600497" timestamp="2010-05-04T00:12:37Z"/>
+  <node id="720050457" lat="56.8664033" lon="41.2961526" user="Scalm" uid="218489" visible="true" version="1" changeset="4600497" timestamp="2010-05-04T00:12:37Z">
+  <tag k="building" v="entrance"/>
+ </node>
+  <node id="720050489" lat="56.8665693" lon="41.2956066" user="Scalm" uid="218489" visible="true" version="1" changeset="4600497" timestamp="2010-05-04T00:12:38Z"/>
+  <node id="720050555" lat="56.8663882" lon="41.2963310" user="Scalm" uid="218489" visible="true" version="1" changeset="4600497" timestamp="2010-05-04T00:12:39Z"/>
+  <node id="720050623" lat="56.8663044" lon="41.2955314" user="Scalm" uid="218489" visible="true" version="1" changeset="4600497" timestamp="2010-05-04T00:12:41Z"/>
+  <node id="720050656" lat="56.8665327" lon="41.2960379" user="Scalm" uid="218489" visible="true" version="1" changeset="4600497" timestamp="2010-05-04T00:12:41Z"/>
+  <node id="720050721" lat="56.8665050" lon="41.2963642" user="Scalm" uid="218489" visible="true" version="1" changeset="4600497" timestamp="2010-05-04T00:12:43Z"/>
+  <node id="720050755" lat="56.8661997" lon="41.2967657" user="Scalm" uid="218489" visible="true" version="1" changeset="4600497" timestamp="2010-05-04T00:12:43Z"/>
+  <node id="720050791" lat="56.8664646" lon="41.2968409" user="Scalm" uid="218489" visible="true" version="1" changeset="4600497" timestamp="2010-05-04T00:12:44Z"/>
+  <node id="721448472" lat="56.8459254" lon="41.3934558" user="Scalm" uid="218489" visible="true" version="1" changeset="4608005" timestamp="2010-05-04T20:34:50Z"/>
+  <node id="721448482" lat="56.8455843" lon="41.3926561" user="Scalm" uid="218489" visible="true" version="1" changeset="4608005" timestamp="2010-05-04T20:34:50Z"/>
+  <node id="721448490" lat="56.8456513" lon="41.3935264" user="Scalm" uid="218489" visible="true" version="1" changeset="4608005" timestamp="2010-05-04T20:34:50Z"/>
+  <node id="721448512" lat="56.8458584" lon="41.3925855" user="Scalm" uid="218489" visible="true" version="1" changeset="4608005" timestamp="2010-05-04T20:34:51Z"/>
+  <node id="736872190" lat="56.8343078" lon="41.3969989" user="Scalm" uid="218489" visible="true" version="1" changeset="4721807" timestamp="2010-05-16T19:54:01Z"/>
+  <node id="736872232" lat="56.8343330" lon="41.3966408" user="Scalm" uid="218489" visible="true" version="1" changeset="4721807" timestamp="2010-05-16T19:54:03Z"/>
+  <node id="736872255" lat="56.8341263" lon="41.3976292" user="Scalm" uid="218489" visible="true" version="1" changeset="4721807" timestamp="2010-05-16T19:54:04Z"/>
+  <node id="736872288" lat="56.8346166" lon="41.3967627" user="Scalm" uid="218489" visible="true" version="1" changeset="4721807" timestamp="2010-05-16T19:54:04Z"/>
+  <node id="736872490" lat="56.8345403" lon="41.3977738" user="Scalm" uid="218489" visible="true" version="1" changeset="4721807" timestamp="2010-05-16T19:54:08Z"/>
+  <node id="736872513" lat="56.8341980" lon="41.3966091" user="Scalm" uid="218489" visible="true" version="1" changeset="4721807" timestamp="2010-05-16T19:54:09Z"/>
+  <node id="736872535" lat="56.8342669" lon="41.3976622" user="Scalm" uid="218489" visible="true" version="1" changeset="4721807" timestamp="2010-05-16T19:54:10Z"/>
+  <node id="736872576" lat="56.8342913" lon="41.3973155" user="Scalm" uid="218489" visible="true" version="1" changeset="4721807" timestamp="2010-05-16T19:54:11Z"/>
+  <node id="736872655" lat="56.8346866" lon="41.3978081" user="Scalm" uid="218489" visible="true" version="1" changeset="4721807" timestamp="2010-05-16T19:54:14Z"/>
+  <node id="736872680" lat="56.8345953" lon="41.3970664" user="Scalm" uid="218489" visible="true" version="1" changeset="4721807" timestamp="2010-05-16T19:54:15Z"/>
+  <node id="736872742" lat="56.8345679" lon="41.3973805" user="Scalm" uid="218489" visible="true" version="1" changeset="4721807" timestamp="2010-05-16T19:54:18Z"/>
+  <node id="736872775" lat="56.8347577" lon="41.3967959" user="Scalm" uid="218489" visible="true" version="1" changeset="4721807" timestamp="2010-05-16T19:54:20Z"/>
+  <node id="739512900" lat="56.8550061" lon="41.3828423" user="Scalm" uid="218489" visible="true" version="1" changeset="4748995" timestamp="2010-05-19T15:09:01Z"/>
+  <node id="739513316" lat="56.8554881" lon="41.3826737" user="Scalm" uid="218489" visible="true" version="1" changeset="4748995" timestamp="2010-05-19T15:09:26Z"/>
+  <node id="739625084" lat="56.8529061" lon="41.3800788" user="Scalm" uid="218489" visible="true" version="1" changeset="4750138" timestamp="2010-05-19T17:52:36Z"/>
+  <node id="739625237" lat="56.8529937" lon="41.3807720" user="Scalm" uid="218489" visible="true" version="1" changeset="4750138" timestamp="2010-05-19T17:52:42Z"/>
+  <node id="739625362" lat="56.8531976" lon="41.3799827" user="Scalm" uid="218489" visible="true" version="1" changeset="4750138" timestamp="2010-05-19T17:52:47Z"/>
+  <node id="739625483" lat="56.8532836" lon="41.3806793" user="Scalm" uid="218489" visible="true" version="1" changeset="4750138" timestamp="2010-05-19T17:52:53Z"/>
+  <node id="747076397" lat="56.8511845" lon="41.3543475" user="Scalm" uid="218489" visible="true" version="1" changeset="4793074" timestamp="2010-05-24T12:46:40Z"/>
+  <node id="764718382" lat="56.8586087" lon="41.3611270" user="Scalm" uid="218489" visible="true" version="1" changeset="4905214" timestamp="2010-06-04T23:34:35Z"/>
+  <node id="764718837" lat="56.8583126" lon="41.3601038" user="Scalm" uid="218489" visible="true" version="1" changeset="4905214" timestamp="2010-06-04T23:34:47Z"/>
+  <node id="771590182" lat="56.8496559" lon="41.3556474" user="Strel0k" uid="303609" visible="true" version="1" changeset="4980275" timestamp="2010-06-13T16:29:43Z">
+  <tag k="amenity" v="Учреждение"/>
+  <tag k="name" v="Молодежный информационный центр"/>
+ </node>
+  <node id="847019266" lat="56.8378774" lon="41.3387234" user="Scalm" uid="218489" visible="true" version="1" changeset="5409396" timestamp="2010-08-05T15:48:09Z"/>
+  <node id="847019474" lat="56.8377690" lon="41.3390755" user="Scalm" uid="218489" visible="true" version="1" changeset="5409396" timestamp="2010-08-05T15:48:19Z"/>
+  <node id="847019678" lat="56.8381542" lon="41.3390204" user="Scalm" uid="218489" visible="true" version="1" changeset="5409396" timestamp="2010-08-05T15:48:28Z"/>
+  <node id="847019705" lat="56.8380459" lon="41.3393560" user="Scalm" uid="218489" visible="true" version="1" changeset="5409396" timestamp="2010-08-05T15:48:29Z"/>
+</osm>

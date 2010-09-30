@@ -1,0 +1,35 @@
+#searchBar {
+    width: 250px;
+}
+
+#results {
+    font-size: 9pt;
+    position: absolute;
+    top: 100px;
+    bottom: 0px;
+    overflow: auto
+}
+
+#resultsCount  {
+    color:gray;
+    padding-bottom: 1em;
+
+}
+
+.searchResult {
+    padding-bottom: 1em;
+}
+
+.searchResultName {
+    font-size: 9pt;
+}
+
+.searchResultFCode {
+    font-size: 8pt;
+    color: gray;
+}
+
+.searchResultAdmin {
+    font-size: 8pt;
+    color: gray;
+}
