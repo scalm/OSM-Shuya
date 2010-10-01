@@ -1,22 +1,20 @@
 #!/bin/bash
 
+# Directories
 BASE_DIR=$PWD
 WWW_DIR=$PWD/src/www
+DIST_WWW_DIR=$BASE_DIR/dist/www
+VENDOR_DIR=$BASE_DIR/vendor
 
-if [ ! -e vendor ]
-then
-	mkdir vendor
-fi
+# Vendors
+mkdir -p "$VENDOR_DIR"
+cd "$VENDOR_DIR"
 
-echo OK	Vendor
-
-cd vendor
-
+# Vendors > Prototype.js
 if [ ! -e prototype ]
 then
 	git clone git://github.com/sstephenson/prototype.git
 fi
-echo OK	prototype
 
 if [ ! -e prototype/dist/prototype.js ]
 then
@@ -24,8 +22,10 @@ then
 	rake
 	cd ..
 fi
-echo OK	prototype.js
+
 ln -sf -t "$WWW_DIR/lib" ../../../vendor/prototype/dist/prototype.js
+
+# Vendors > OpenLayers
 
 if [ ! -e openlayers ]
 then
@@ -34,41 +34,48 @@ then
 	build.py
 	cd ../..
 fi
-echo OK	openlayers
-
 
 DIR=$WWW_DIR/lib/openlayers
+REL_VENDOR_DIR=../../../../vendor
 mkdir -p "$DIR"
 cd "$DIR"
-ln -sf ../../../../vendor/openlayers/lib
-ln -sf ../../../../vendor/openlayers/img
-ln -sf ../../../../vendor/openlayers/theme
+ln -sf "$REL_VENDOR_DIR/openlayers/lib"
+ln -sf "$REL_VENDOR_DIR/openlayers/img"
+ln -sf "$REL_VENDOR_DIR/openlayers/theme"
 
-cd "$BASE_DIR"
 
+# Distribution
 if [ "$1" = "dist" ]
 then
-	DIST_WWW_DIR="$BASE_DIR/dist/www"
-	mkdir -pv "$DIST_WWW_DIR"
-	cd "$WWW_DIR"
-	cp -LRuv "css" "$DIST_WWW_DIR"
-	cp -LRuv "data" "$DIST_WWW_DIR"
-	cp -LRuv "img" "$DIST_WWW_DIR"
-	cp -LRuv "inc" "$DIST_WWW_DIR"
-	cp -LRuv "js" "$DIST_WWW_DIR"
-    cp -LRuv "xsl" "$DIST_WWW_DIR"
-    cp -Luv *.php "$DIST_WWW_DIR"
+	# Source code
+	mkdir -p "$DIST_WWW_DIR" # to (dest-dir)
+	cd "$WWW_DIR" # from (src-dir)
 
-    mkdir -pv "$DIST_WWW_DIR/lib"
+    cp -Lu *.php "$DIST_WWW_DIR"   # source code
+	cp -LRu "inc" "$DIST_WWW_DIR"
+	cp -LRu "js" "$DIST_WWW_DIR"
+	cp -LRu "css" "$DIST_WWW_DIR"  # styles
+    cp -LRu "img" "$DIST_WWW_DIR"
+	cp -LRu "data" "$DIST_WWW_DIR" # data
+    cp -LRu "xsl" "$DIST_WWW_DIR"
+
+    # Libraries
+    mkdir -p "$DIST_WWW_DIR/lib" # dest-dir
     cd "$DIST_WWW_DIR/lib/"
-    cp -Luv "$BASE_DIR/vendor/prototype/dist/prototype.js" ./
-    cp -Luv "$BASE_DIR/vendor/openlayers/build/OpenLayers.js" ./
-    cp -LRuv "$BASE_DIR/vendor/openlayers/img" ./
-    cp -LRuv "$BASE_DIR/vendor/openlayers/theme" ./
-#	find -L "lib" \( ! -regex '.*/\..*' \) -type d -exec mkdir -pv "$DIST_WWW_DIR/{}"  \;
-#	find -L "lib" \( ! -regex '.*/\..*' \) -type f -exec cp -Luv {} "$DIST_WWW_DIR/{}" \;
-		
-	mkdir -pv "$DIST_WWW_DIR/config"
-    cd "$DIST_WWW_DIR/config"
-	cp -Luv "$WWW_DIR/config/config.dist.php" "config.php"
+
+    # Libraries > Prototype.js
+    cp -Lu "$VENDOR_DIR/prototype/dist/prototype.js" .
+
+    # Libraries > OpenLayers
+    cp -Lu "$VENDOR_DIR/openlayers/build/OpenLayers.js" .
+    cp -LRu "$VENDOR_DIR/openlayers/img" .
+    cp -LRu "$VENDOR_DIR/openlayers/theme" .
+
+    # Configuration
+	mkdir -p "$DIST_WWW_DIR/config"
+	cp -Lu "$WWW_DIR/config/config.dist.php" "$DIST_WWW_DIR/config/config.php"
+
+    echo "configure dist done."
+else
+    echo "configure done."
 fi
