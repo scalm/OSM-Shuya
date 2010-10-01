@@ -25,7 +25,6 @@ then
 	cd ..
 fi
 echo OK	prototype.js
-ln -sf -t "$WWW_DIR/lib-dev" ../../../vendor/prototype/dist/prototype.js
 ln -sf -t "$WWW_DIR/lib" ../../../vendor/prototype/dist/prototype.js
 
 if [ ! -e openlayers ]
@@ -38,20 +37,12 @@ fi
 echo OK	openlayers
 
 
-DIR=$WWW_DIR/lib-dev/openlayers
+DIR=$WWW_DIR/lib/openlayers
 mkdir -p "$DIR"
 cd "$DIR"
 ln -sf ../../../../vendor/openlayers/lib
 ln -sf ../../../../vendor/openlayers/img
 ln -sf ../../../../vendor/openlayers/theme
-
-DIR=$WWW_DIR/lib/
-mkdir -p "$DIR"
-cd "$DIR"
-ln -sf ../../../vendor/openlayers/build/OpenLayers.js
-ln -sf ../../../vendor/openlayers/img
-ln -sf ../../../vendor/openlayers/theme
-
 
 cd "$BASE_DIR"
 
@@ -65,11 +56,19 @@ then
 	cp -LRuv "img" "$DIST_WWW_DIR"
 	cp -LRuv "inc" "$DIST_WWW_DIR"
 	cp -LRuv "js" "$DIST_WWW_DIR"
-	find -L "lib" \( ! -regex '.*/\..*' \) -type d -exec mkdir -pv "$DIST_WWW_DIR/{}"  \;
-	find -L "lib" \( ! -regex '.*/\..*' \) -type f -exec cp -Luv {} "$DIST_WWW_DIR/{}" \;
-	cp -LRuv "xsl" "$DIST_WWW_DIR"
-	cp -Luv *.php "$DIST_WWW_DIR"
-	
+    cp -LRuv "xsl" "$DIST_WWW_DIR"
+    cp -Luv *.php "$DIST_WWW_DIR"
+
+    mkdir -pv "$DIST_WWW_DIR/lib"
+    cd "$DIST_WWW_DIR/lib/"
+    cp -Luv "$BASE_DIR/vendor/prototype/dist/prototype.js" ./
+    cp -Luv "$BASE_DIR/vendor/openlayers/build/OpenLayers.js" ./
+    cp -LRuv "$BASE_DIR/vendor/openlayers/img" ./
+    cp -LRuv "$BASE_DIR/vendor/openlayers/theme" ./
+#	find -L "lib" \( ! -regex '.*/\..*' \) -type d -exec mkdir -pv "$DIST_WWW_DIR/{}"  \;
+#	find -L "lib" \( ! -regex '.*/\..*' \) -type f -exec cp -Luv {} "$DIST_WWW_DIR/{}" \;
+		
 	mkdir -pv "$DIST_WWW_DIR/config"
-	cp -Luv config/config.dist.php "$DIST_WWW_DIR/config/config.php"
+    cd "$DIST_WWW_DIR/config"
+	cp -Luv "$WWW_DIR/config/config.dist.php" "config.php"
 fi

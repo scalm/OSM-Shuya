@@ -1,1 +1,0 @@
-../../../vendor/openlayers/build/OpenLayers.js
