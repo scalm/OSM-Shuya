@@ -1,5 +1,5 @@
 <?php
-
+    require_once('config/config.php');
     header('Content-Type: text/html; charset=utf-8');
         
 ?>
@@ -14,9 +14,9 @@
         <link rel="stylesheet" href="css/search.css" type="text/css" />
 
         <!-- Libraries -->
-        <script type="text/javascript" src="lib/prototype.js"></script>
-        <script type="text/javascript" src="lib/OpenLayers.js"></script>
-        <script type="text/javascript" src="lib/OpenLayers.Layer.OSM.js"></script>
+        <script type="text/javascript" src="<?= LIB_PROTOTYPEJS ?>"></script>
+        <script type="text/javascript" src="<?= LIB_OPENLAYERS ?>"></script>
+        <script type="text/javascript" src="js/OpenLayers.Layer.OSM.js"></script>
 
         <!-- Core -->
         <script type="text/javascript" src="js/Application.js"></script>

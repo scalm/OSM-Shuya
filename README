@@ -1,3 +1,32 @@
 OSM Shuya
 
 Interactive map of Shuya-city based on OpenStreetMap and OpenLayers.
+
+
+Deployment
+-----------
+# clone repository
+git clone git://github.com/scalm/OSM-Shuya.git
+cd OSM-Shuya
+# fetch and configure dependencies
+./configure.sh
+
+Development
+-----------
+Config ./src/www as web root directory for site.
+
+# configure site (may differ)
+# ln -s ./src/www /var/www/site
+
+Production
+---------
+# copying files
+./configure.sh dist
+
+# configure site (may differ)
+# mkdir -p /var/www/site
+# cp -R ./dist/www /var/www/site
+
+# remove temporary files
+# rm -rf ./dist
+
