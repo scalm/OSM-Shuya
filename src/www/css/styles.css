@@ -72,21 +72,10 @@ input#search {
     background-color: #AAAAAA;
 }
 
-.olControlEditingToolbar .olControlDrawFeatureRulerItemActive {
-    background-image: url("../openlayers/img/measuring-stick-on.png");
-    background-repeat: no-repeat;
-
-}
-.olControlEditingToolbar .olControlDrawFeatureRulerItemInactive {
-    background-image: url("../openlayers/img/measuring-stick-off.png");
-    background-repeat: no-repeat;
-
-}
-
 .olControlSearchItemActive {
 }
 
-.olControlEditingToolbar .olControlSearchItemActive {
+.controlToolbar .olControlSearchItemActive {
     width: 72px;
     height: 71px;
     background-image: url("../openlayers/img/search.png");
@@ -106,14 +95,6 @@ input#search {
     display: block;
     position: absolute;
 
-}
-
-.olControlMeasureValue {
-    right: 3px;
-    top: 20em;
-    display: block;
-    position: absolute;
-    font-size: smaller;
 }
 
 .olControlMarkerM {
@@ -268,4 +249,51 @@ a {
 
 .olPopup a {
     text-decoration: underline;
+}
+
+.controlToolbar  {
+    float:right;
+    right: 0px;
+    height: 30px;
+    width: 200px;
+}
+
+.controlToolbar div {
+  float:right;
+  width:  24px;
+  height: 24px;
+  margin: 5px;
+}
+
+
+.controlToolbar .olMeasureControlItemActive {
+    background-image: url("../img/measuring-stick-on.png");
+    background-repeat: no-repeat;
+
+}
+.controlToolbar .olMeasureControlItemInactive {
+    background-image: url("../img/measuring-stick-off.png");
+    background-repeat: no-repeat;
+}
+
+.olControlMeasureValue {
+    right: 3px;
+    top: 20em;
+    display: block;
+    position: absolute;
+    font-size: smaller;
+    display: none;
+}
+
+.olControlMeasureValueActive .olControlMeasureValue {
+    display: block;
+}
+
+.controlToolbar .olControlDragPanItemActive {
+    background-image: url("../img/pan_on.png");
+    background-repeat: no-repeat;
+}
+.controlToolbar .olControlDragPanItemInactive {
+    background-image: url("../img/pan_off.png");
+    background-repeat: no-repeat;
 }

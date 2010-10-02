@@ -7,7 +7,7 @@ Application.MeasureControl = OpenLayers.Class(OpenLayers.Control.Measure, {
             OpenLayers.Handler.Path,
             {
                 persist: true,
-                displayClass: "olControlDrawFeatureRuler",
+                displayClass: "olMeasureControl",
                 handlerOptions: {
                     layerOptions: {
                         styleMap: this.getStyleMap()
@@ -21,12 +21,6 @@ Application.MeasureControl = OpenLayers.Class(OpenLayers.Control.Measure, {
             }
             
         );
-
-        this.events.on({
-            "measure": this.handleMeasurements,
-            "measurepartial": this.handleMeasurements
-        });
-
     },
 
     getStyleMap: function() {
@@ -85,20 +79,13 @@ Application.MeasureControl = OpenLayers.Class(OpenLayers.Control.Measure, {
         this.map.addLayer(this.layers.measurements);
     },
 
-    
+
     handleMeasurements: function (event) {
         var geometry = event.geometry;
         var units = event.units;
         var order = event.order;
         var measure = event.measure;
-        var element = $('output');
-        var out = "";
-        if(order == 1) {
-            out += "measure: " + measure.toFixed(3) + " " + units;
-        } else {
-            out += "measure: " + measure.toFixed(3) + " " + units + "<sup>2</" + "sup>";
-        }
-        element.innerHTML = out;
+
 
         /*var point = geometry.getVertices(true)[1];
 
@@ -140,11 +127,9 @@ Application.MeasureControl = OpenLayers.Class(OpenLayers.Control.Measure, {
 /**/
 
 
-    }
+    },
 
-
-
-
+    CLASS_NAME: "Application.MeasureControl"
 });
 
 

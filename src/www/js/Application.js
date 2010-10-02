@@ -184,6 +184,8 @@ var Application = {
     var appFiles = [
         "OSM/OSM.js",
         "Application/SelectFeatureEx.js",
+        "Application/MeasureControl.js",
+        "Application/MeasureValueControl.js",
         "Application/EntityLayer.js",
 
         "EntityList.js",

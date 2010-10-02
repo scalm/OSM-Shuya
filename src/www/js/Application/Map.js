@@ -6,6 +6,17 @@ Application.Map = OpenLayers.Class(OpenLayers.Map, {
     initialize: function(div, options) {
         OpenLayers.Lang.setCode('ru');
 
+        this.measureControl = new Application.MeasureControl();
+        this.toolbar = new OpenLayers.Control.Panel({
+            displayClass: "controlToolbar"
+        });
+        this.toolbar.addControls([
+            this.measureControl,
+            new OpenLayers.Control.DragPan()
+        ]);
+
+        this.measureValueControl = new Application.MeasureValueControl(this.measureControl);
+
         options = {
             controls: options.controls || [
                 new OpenLayers.Control.ArgParser(),
@@ -18,7 +29,9 @@ Application.Map = OpenLayers.Class(OpenLayers.Map, {
                 new OpenLayers.Control.Permalink(),
                 new OpenLayers.Control.MousePosition(),
                 new OpenLayers.Control.OverviewMap(),
-                new OpenLayers.Control.KeyboardDefaults()
+                new OpenLayers.Control.KeyboardDefaults(),
+                this.toolbar,
+                this.measureValueControl,
             ],
             displayProjection: this.epsg4326
         };
