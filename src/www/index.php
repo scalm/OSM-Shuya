@@ -1,7 +1,27 @@
 <?php
     require_once('config/config.php');
     header('Content-Type: text/html; charset=utf-8');
-        
+
+    // init coordinates
+    // zoom=12&lat=56.8538&lon=41.3947&layers=B00TT
+    if( isset($_GET['lat']) && isset($_GET['lon']) ) {
+        $lat = floatval($_GET['lat']);
+        $lon = floatval($_GET['lon']);
+    } else {
+        $lat = 56.8538;
+        $lon = 41.3947;
+    }
+    if(isset($_GET['zoom'])) {
+        $zoom = intval($_GET['zoom']);
+    } else {
+        $zoom = 12;
+    }
+
+    if(isset($_GET['layers'])) {
+        $layers = $_GET['layers'];
+    } else {
+        $layers = null;
+    }
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -102,30 +122,13 @@
 
     <script type="text/javascript">
         function loaded() {
-        // zoom=12&lat=56.8538&lon=41.3947&layers=B00TT
-        <?php
-        if( isset($_GET['lat']) && isset($_GET['lon']) ) {
-            $lat = floatval($_GET['lat']);
-            $lon = floatval($_GET['lon']);
-        } else {
-            $lat = 56.8538;
-            $lon = 41.3947;
-        }
-        if(isset($_GET['zoom'])) {
-            $zoom = intval($_GET['zoom']);
-        } else {
-            $zoom = 12;
-        }
-        ?>
+            Application.initialize();
+            var position = new OpenLayers.LonLat(<?=$lon?>,<?=$lat?>);
+            var zoom = <?=$zoom ?>;
+            application.map.setMapCenter(position, zoom);
 
-        Application.initialize();
-        var position = new OpenLayers.LonLat(<?=$lon?>,<?=$lat?>);
-        var zoom = <?=$zoom ?>;
-        application.map.setMapCenter(position, zoom);
-        <?php if(isset($_GET['layers'])) {?>
-            //shuya.map.setMapLayers('<?=$_GET['layers']?>');
-        <?php } ?>
-            }
+            <? if ($layers) { ?> shuya.map.setMapLayers('<?=$layers?>'); <? } ?>
+        }
     </script>
 </html>
 
