@@ -277,11 +277,14 @@ a {
 }
 
 .olControlMeasureValue {
-    right: 3px;
-    top: 20em;
+    right: 200px;
     display: block;
     position: absolute;
     font-size: smaller;
+    background-color: white;
+    opacity: 0.8;
+    padding: 5px;
+    border: solid #AAAAAA 1px;
     display: none;
 }
 
