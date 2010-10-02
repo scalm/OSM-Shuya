@@ -39,7 +39,6 @@ var Shuya = Class.create({
 
         this.initLayers();
         //OSMTransport.initialize();
-        //OSMAmenity.initialize();
         
         this.initControls();
 
@@ -65,45 +64,9 @@ var Shuya = Class.create({
 
     initControls: function()
     {
-        // MyMeasure.init();
-
-        /*
-        vlayer = new OpenLayers.Layer.Vector( "Editable", {
-            projection: "EPSG:4326"
-        });
-        this.map.addLayer(vlayer);
-        var editingToolbar = new OpenLayers.Control.EditingToolbar(vlayer)
-*/
-        
-        /*editingToolbar.addControls(new OpenLayers.Control.MyMeasure());
-        
-
-
-        var output = new OpenLayers.Control({
-            displayClass: 'olControlMeasureValue'
-        });
-        OpenLayers.Util.extend(output, {
-
-
-            draw: function() {
-                OpenLayers.Control.prototype.draw.apply(this,arguments);
-                //this.div.setClassName('meas');
-                if(!this.element) {
-                    this.element = document.getElementById('output');
-                    this.div.appendChild(this.element);
-                }
-                //this.div = document.createElement('div');
-                return this.div;
-            }
-
-        });
-
-        this.map.addControl(output);*/
-        
         //SearchManager.initialize(document.getElementById('searchBar'));
         //SearchNameManager.initialize(document.getElementById('searchNameBar'));
         //RouteManager.initialize(document.getElementById('routeBar'));
-        //AmenityManager.initialize(document.getElementById('amenityBar'));
 
         // searchbar
         /*var searchButton = new OpenLayers.Control.Button({

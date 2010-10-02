@@ -96,7 +96,6 @@
         <div>
             <ul id="tabBar"></ul>
             <div id="map" style="position: absolute; top: 40px; left:0; right:0; bottom:0px"></div>
-            <div id="output" style="display:none;"></div>
         </div>
     </body>
 
