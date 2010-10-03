@@ -1,7 +1,8 @@
 OSM.Relation = Class.create(OSM.Entity, {
 
     /** @param {Element} domRelationElement */
-    initialize: function(domRelationElement) {
+    initialize: function($super, domRelationElement) {
+        $super(domRelationElement);
         /** @type OSM.Relation.Member[] */
         this.members = [];
         if (domRelationElement!=undefined) {
@@ -9,7 +10,7 @@ OSM.Relation = Class.create(OSM.Entity, {
             domNodes.each(
                 function(n) {
                     if(n.nodeType==Node.ELEMENT_NODE && n.tagName=='member') {
-                        this.nodes.push(new OSM.Relation.Member(n));
+                        this.members.push(new OSM.Relation.Member(n));
                     }
                 },
                 this
@@ -46,7 +47,7 @@ OSM.Relation.Member = Class.create({
             /** @type String */
             this.type = domMemberElement.getAttribute('type');
             /** @type String */
-            this.role = domMemberElement.getAttribyte('role');
+            this.role = domMemberElement.getAttribute('role');
         } else {
 
         }

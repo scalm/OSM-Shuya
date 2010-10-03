@@ -97,17 +97,21 @@ String.prototype.containsIgnoreCase = function(s) {
         return this.toUpperCase().indexOf(s.toUpperCase()) >=0;
 };
 
-Class.templateClass = function(clazz) {
-    return Class.create(clazz, {
-        initialize: function(params) {
-            clazz.prototype.initialize.apply(this, params)
+Element.prototype.observeA = function(callbacks) {
+    for ( c in callbacks) {
+        if (callbacks.hasOwnProperty(c)) {
+            this.observe(c, callbacks[c]);
         }
-    });
-};
+    }
+}
 
-Class.newInstance = function(clazz, params) {
-    return new (Class.templateClass(clazz))(params);
-};
+Element.prototype.appendElement = function(tagName, params) {
+    return this.appendChild(new Element(tagName, params));
+}
+
+Element.prototype.appendText = function(text) {
+    return this.appendChild(document.createTextNode(text));
+}
 
 /**
  * @class
@@ -194,18 +198,25 @@ var Application = {
         
         "Application/Map.js",
         "Application/ToolWindow.js",
+        "Application/Views.js",
         "Shuya.js",
         
 
         "Application/AmenityManager/init.js",
-        "Application/AmenityManager/GroupList.js",
+        "Application/AmenityManager/View.js",
         "Application/AmenityManager/Popup.js",
-        "Application/AmenityManager/Views.js",
         "Application/AmenityManager/ToolWindow.js",
 
         "Application/Amenity.js",
         "Application/Amenity/Lang.js",
         "Application/Amenity/Filter.js",
+
+        "Application/Route.js",
+
+        "Application/RouteManager/init.js",
+        "Application/RouteManager/View.js",
+//        "Application/RouteManager/Popup.js",
+        "Application/RouteManager/ToolWindow.js",
 
         "Tab/init.js",
         "Tab/Tab.js",

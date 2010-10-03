@@ -62,9 +62,9 @@ Tab = {
      */
     fireClick: function(tab) {
         if (this.selectedTab && this.selectedTab != tab) {
-            this.fire('onUnselect', tab);
+            this.fire('onUnselect', this.selectedTab);
             var handler = this.selectedTab.getHandler();
-            if (handler) handler(tab, false);
+            if (handler) handler(this.selectedTab, false);
             this.selectedTab = null;
         }
         if (tab) {

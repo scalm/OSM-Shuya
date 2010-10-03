@@ -9,6 +9,12 @@ body {
     margin: 0px;
 }
 
+a {
+    font: inherit;
+    text-decoration: inherit;
+    color: inherit;
+}
+
 img {
     border: none;
 }
@@ -38,6 +44,19 @@ img {
     margin-bottom: 5px;
 }
 
+.listItem1 {
+    background-color: #DDDDDD;
+    padding: 5px;
+}
+
+.listItem2 {
+    background-color: white;
+    padding: 5px;
+}
+
+.hoverListItem {
+    background-color: #AAAAAA;
+}
 
 input#querystring {
     width: 170px;
@@ -58,59 +77,6 @@ input#search {
 }
 
 
-.listItem1 {
-    background-color: #DDDDDD;
-    padding: 5px;
-}
-
-.listItem2 {
-    background-color: white;
-    padding: 5px;
-}
-
-.hoverListItem {
-    background-color: #AAAAAA;
-}
-
-.olControlSearchItemActive {
-}
-
-.controlToolbar .olControlSearchItemActive {
-    width: 72px;
-    height: 71px;
-    background-image: url("../openlayers/img/search.png");
-    background-repeat: no-repeat;
-
-
-}
-
-.olControlEditingToolbar .olControlSearchItemInactive {
-    width: 20px;
-    height: 20px;
-    background-image: url("../openlayers/img/search.png");
-    background-repeat: no-repeat;
-
-    right: 180px;
-    top: 0px;
-    display: block;
-    position: absolute;
-
-}
-
-.olControlMarkerM {
-    display: block;
-    position: absolute;
-    font-size: smaller;
-}
-
-.textMarker {
-    overflow: hidden;
-    background-color: white;
-    opacity: 0.6;
-    border: black solid 1px;
-    padding: 0px 5px;
-}
-
 .routeColor {
     float: left;
     height: 12px;
@@ -119,7 +85,7 @@ input#search {
     border: black 1px solid;
 }
 
-#routes,
+.routeManager .scrollBox,
 .amenityManager .scrollBox {
     font-size: 9pt;
     position: absolute;
@@ -130,47 +96,8 @@ input#search {
     right: 0px;
 }
 
-#routeList, .amenityList {
-    padding: 10px;
-}
 
-ul.tabBar {
-    display: block;
-    padding: 0px 0px 0px 20px;
-    margin: 5px 0px 0px 0px;
-    border-bottom: gray solid thin;
-}
-
-ul.tabBar li {
-    font-weight: bold;
-    display: inline-block;
-    border-bottom: red solid thin;
-    padding: 0px;
-    margin: 0px 0px -1px 0px;
-}
-
-ul.tabBar li a {
-    text-decoration: inherit;
-    color: inherit;
-    font: inherit;
-
-    display: inline-block;
-    padding: 5px 5px;
-    margin: 0px 0px -1px 0px;
-
-    background-color: #EEEEEE;
-    border: gray solid thin;    
-}
-
-ul.tabBar li.active a {
-    background-color: white;
-    border-bottom-color: white;
-}
-
-ul.tabBar li a:hover {
-    background-color: white;
-}
-
+.routeManager input[name='query'],
 .amenityManager input[name='query'] {
     width: 170px;
     height: 20px;
@@ -181,6 +108,7 @@ ul.tabBar li a:hover {
     font-size: 10pt;
 }
 
+.routeManager input[type='submit'],
 .amenityManager input[type='submit'] {
     height: 20px;
     font-size: 10pt;
@@ -189,114 +117,49 @@ ul.tabBar li a:hover {
     padding: 0;
 }
 
-.amenityGroup div {
-    line-height: 14pt;
+/* ul */
+.routeList, .amenityList {
+    padding: 10px;
 }
 
-.amenityGroup ul {
-    list-style-type: none;
-    padding-left: 20px;
-    margin: 0px;
-    display: none;
-    border-bottom: gray solid 1px;
+/* ul li */
+.group {
+    padding: 0px;
 }
 
-.amenityGroup.opened ul {
-    display: block;
-}
-
-a {
-    font: inherit;
-    text-decoration: inherit;
-    color: inherit;
-}
-
-.amenityGroup .header {
-    cursor: hand;
-}
-
-.amenityGroup .header .markopened {
-    display: none;
-    width: 12px;
-    height: 12px;
-    background-image: url('../img/collapse.gif');
-    background-repeat: no-repeat;
-    background-position: 1px 2px;
-}
-
-.amenityGroup .header .markclosed {
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    background-image: url('../img/expand.gif');
-    background-repeat: no-repeat;
-    background-position: 0px 1px;
-}
-
-.amenityGroup.opened .header .markopened {
-    display: inline-block;
-}
-.amenityGroup.opened .header .markclosed {
-    display: none;
-}
-
-
-#routeList ul {
-    list-style-type: none;
-    padding-left: 10px;
-    border-bottom: gray solid 1px;
-}
-
-.olPopup a {
-    text-decoration: underline;
-}
-
-.controlToolbar  {
-    float:right;
-    right: 0px;
-    height: 30px;
-    width: 200px;
-}
-
-.controlToolbar div {
-  float:right;
-  width:  24px;
-  height: 24px;
-  margin: 5px;
-}
-
-
-.controlToolbar .olMeasureControlItemActive {
-    background-image: url("../img/measuring-stick-on.png");
-    background-repeat: no-repeat;
-
-}
-.controlToolbar .olMeasureControlItemInactive {
-    background-image: url("../img/measuring-stick-off.png");
-    background-repeat: no-repeat;
-}
-
-.olControlMeasureValue {
-    right: 200px;
-    display: block;
-    position: absolute;
-    font-size: smaller;
-    background-color: white;
-    opacity: 0.8;
+/* ul li div */
+.group .header {
     padding: 5px;
-    border: solid #AAAAAA 1px;
-    display: none;
+    line-height: 14pt;
+    cursor: pointer;
 }
 
-.olControlMeasureValueActive .olControlMeasureValue {
+/* ul li ul */
+.group ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 5px 0px;
+    display: none;
+    border-bottom: gray solid 1px;
+    cursor: pointer;
+}
+
+/* ul li ul */
+.group.opened ul {
     display: block;
 }
 
-.controlToolbar .olControlDragPanItemActive {
-    background-image: url("../img/pan_on.png");
+.group .togglemark {
+    width: 12px;
+    height: 12px;
     background-repeat: no-repeat;
+    background-image: url('../img/expand.gif');
+    background-position: 0px 1px;
+    display: inline-block;
+    padding-right: 3px;
 }
-.controlToolbar .olControlDragPanItemInactive {
-    background-image: url("../img/pan_off.png");
-    background-repeat: no-repeat;
+
+.group.opened .togglemark {
+    background-image: url('../img/collapse.gif');
+    background-position: 0px 1px;
 }

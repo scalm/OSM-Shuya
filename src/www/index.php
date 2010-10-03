@@ -31,6 +31,8 @@
         <title>Карта города Шуя Ивановской области</title>
         <link rel="stylesheet" href="theme/default/style.css" type="text/css" />
         <link rel="stylesheet" href="css/styles.css" type="text/css" />
+        <link rel="stylesheet" href="css/tabs.css" type="text/css" />
+        <link rel="stylesheet" href="css/mapcontrols.css" type="text/css" />
         <link rel="stylesheet" href="css/search.css" type="text/css" />
 
         <!-- Libraries -->

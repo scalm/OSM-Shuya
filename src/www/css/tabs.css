@@ -1,0 +1,36 @@
+ul.tabBar {
+    display: block;
+    padding: 0px 0px 0px 20px;
+    margin: 5px 0px 0px 0px;
+    border-bottom: gray solid thin;
+}
+
+ul.tabBar li {
+    font-weight: bold;
+    display: inline-block;
+    border-bottom: red solid thin;
+    padding: 0px;
+    margin: 0px 0px -1px 0px;
+}
+
+ul.tabBar li a {
+    text-decoration: inherit;
+    color: inherit;
+    font: inherit;
+
+    display: inline-block;
+    padding: 5px 5px;
+    margin: 0px 0px -1px 0px;
+
+    background-color: #EEEEEE;
+    border: gray solid thin;
+}
+
+ul.tabBar li.active a {
+    background-color: white;
+    border-bottom-color: white;
+}
+
+ul.tabBar li a:hover {
+    background-color: white;
+}

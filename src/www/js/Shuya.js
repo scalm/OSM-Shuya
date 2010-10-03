@@ -44,8 +44,12 @@ var Shuya = Class.create({
 
         /** @type Application.Amenity */
         this.amenity = new Application.Amenity(this);
-        this.amenityManager = new Application.AmenityManager(this, this.amenity, $('amenityBar'));
+        this.amenityManager = new Application.AmenityManager(this, this.amenity);
         this.amenity.load();
+
+        this.route = new Application.Route(this);
+        this.routeManager = new Application.RouteManager(this, this.route);
+        this.route.load();
     },
 
     initLayers: function()

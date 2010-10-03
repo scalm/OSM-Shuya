@@ -1,17 +1,17 @@
 /**
- * @class Implements Tool window with amenity list.
+ * @class Implements Tool window with routes list.
  */
-Application.AmenityManager.ToolWindow = Class.create(Application.ToolWindow, {
+Application.RouteManager.ToolWindow = Class.create(Application.ToolWindow, {
 
     /**
      * @constructor
      * @param {Function} $super Inherited initialize function.
-     * @param {Application.AmenityManager} manager
+     * @param {Application.RouteManager} manager
      */
     initialize: function($super, manager) {
         $super($('windowContainer'), {
-            title: 'Достопримечательности',
-            'class': 'amenityManager'
+            title: 'Маршруты',
+            'class': 'routeManager'
         });
 
         /** @private @type Application.AmenityManager */
@@ -22,8 +22,8 @@ Application.AmenityManager.ToolWindow = Class.create(Application.ToolWindow, {
             'class': 'scrollBox'
         });
 
-        /** @private @type Application.RouteManager.GroupList */
-        this.listView = new Application.AmenityManager.ListView(manager);
+        /** @private @type Application.AmenityManager.GroupList */
+        this.listView = new Application.RouteManager.ListView(manager);
         this.scrollBox.update(this.listView.toElement());
 
         /** @private @type Element */
