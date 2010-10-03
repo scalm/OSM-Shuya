@@ -40,7 +40,6 @@ Application.RouteManager.ListView = Class.create({
     processMembers: function(member, index) {
         var li = this.container.appendElement('li', {'class' : 'member listItem'+((index) % 2 + 1)});
 
-        console.log(this, this.view, this.view.manager.osm, member.getRef());
         var entity = this.view.manager.osm.get(member.getRef());
         // image
         var imgSrc = entity.getImage();

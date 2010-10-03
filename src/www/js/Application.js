@@ -175,6 +175,7 @@ var EventSupport = {
  */
 var Application = {
     initialize: function() {
+        Application.initializeView();
         //console.log("Application.initialize");
         new Tab.Bar($("tabBar"));
         OpenLayers.ImgPath = 'lib/img/';
