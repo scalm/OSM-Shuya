@@ -33,13 +33,13 @@ Application.RouteManager = Class.create({
         Tab.add(new Tab.Tab("Маршруты", this.onSelectTab.bind(this)));
 
         /** @private @type OpenLayers.Layer.Vector */
-        /*this.layer = new Application.EntityLayer( "Amenity", {
+        this.layer = new Application.EntityLayer( "Routes", {
             visibility: false,
             styleMap: this.styleMap,
             osm: this.osm
         });
         this.map.addLayer(this.layer);
-
+/*
         this.layer.selectControl.onHighlight  = function(feature) {
             if (this.popupHideTimer) {
                 window.clearInterval(this.popupHideTimer);
@@ -56,20 +56,24 @@ Application.RouteManager = Class.create({
         /** @private @type Application.Route.Filter */
         this.filter = null;
 
+        var rule = new RouteRule({ route: this.route });
+        
+        this.styleMap.styles['default'].addRules([rule]);
+
     },
 
     /** @public @static @type OpenLayers.StyleMap */
     styleMap: new OpenLayers.StyleMap({
-        "default": {
-            strokeWidth: 1,
+        "default": new OpenLayers.Style({
+            strokeWidth: 3,
             strokeColor: '#800000',
             fillColor: '#FF0000',
             pointRadius: 3,
             strokeOpacity: 0.5,
             fillOpacity: 0.5
-        },
+        }),
         "highlight": {
-            strokeWidth: 2,
+            strokeWidth: 3,
             strokeColor: '#800000',
             fillColor: '#FF0000',
             pointRadius: 5,
@@ -81,23 +85,23 @@ Application.RouteManager = Class.create({
             strokeColor: '#800000',
             fillColor: '#00FF00',
             pointRadius: 5,
-            strokeOpacity: 0.5,
-            fillOpacity: 0.5
+            strokeOpacity: 1,
+            fillOpacity: 1
         }
     }),
 
     /**
      * @private @event
-     * @param {Application.Amenity} amenity
+     * @param {Application.Route} route
      * @type void
      */
-    onRouteUpdate: function(amenity) {
+    onRouteUpdate: function(route) {
         this.toolWindow.updateList(this.route.getHash());
-        //this.updateLayer();
+        this.updateLayer();
     },
 
     /**
-     * @param {Application.Amenity.Filter} filter
+     * @param {Application.Route.Filter} filter
      */
     setFilter: function(filter) {
         /*this.filter = filter;
@@ -112,7 +116,7 @@ Application.RouteManager = Class.create({
      * @param {OSM.Geometry.Entity} gAmenity
      * @type void
      */
-    showAmenityTooltip: function(gAmenity) {
+    /*showAmenityTooltip: function(gAmenity) {
         if(gAmenity == null) {
             if(this.popup) this.map.removePopup(this.popup);
             return;
@@ -123,10 +127,10 @@ Application.RouteManager = Class.create({
             }.bind(this)
         });
         this.map.addPopup(this.popup, true);
-    },
+    },*/
 
     /** @private @type Application.AmenityManager.Popup */
-    popup: null,
+    //popup: null,
 
     /**
      * Invoke when feature was selected
@@ -157,11 +161,22 @@ Application.RouteManager = Class.create({
      */
     updateLayer: function() {
         this.layer.removeAllEntities();
-        var eList = this.route.getAmenity();
-        if (this.filter) {
+        var eList = this.route.getHash();
+        /*if (this.filter) {
             eList = eList.filter(this.filter.filter, this.filter);
-        }
-        this.layer.addEntities(eList); 
+        }*/
+        //this.layer.addEntities(eList);
+
+        eList.each(function(pair) {
+            var relation = pair.value;
+            relation.getMembers().each(function(pair) {
+                var member = pair.value;
+                var entity = this.osm.get(member.getRef());
+                if(!this.layer.getFeatureBy('entity', entity)) {
+                    this.layer.addEntity(entity);
+                }
+            }, this);
+        }, this);
     },
 
     /**
@@ -191,8 +206,38 @@ Application.RouteManager = Class.create({
      */
     showElements: function(show) {
         if (show===undefined) show = true;
-        //this.layer.setVisibility(show);
+        this.layer.setVisibility(show);
         this.toolWindow.visible(show);
     }
 
+});
+
+var RouteRule = OpenLayers.Class(OpenLayers.Rule, {
+
+    initialize: function() {
+        OpenLayers.Rule.prototype.initialize.apply(this, arguments);
+    },
+
+    evaluate: function(feature) {
+        var applies = OpenLayers.Rule.prototype.evaluate.apply(this, arguments);
+        if (applies) {
+            var entity = feature.attributes.entity;
+            if (entity) {
+                var pair = this.route.getHash().find(function(pair) {
+                    return (pair.value.getMembers().get(entity.getId()) !==undefined);
+                });
+                applies = !!pair;
+                if (applies) {
+                    relation = pair.value;
+                    var color = relation.getTag('colour');
+                    this.symbolizer = {
+                        strokeColor: color
+                    }
+                }
+            } else {
+                applies = false;
+            }
+        };
+        return applies;
+    }
 });

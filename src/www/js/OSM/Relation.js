@@ -3,14 +3,18 @@ OSM.Relation = Class.create(OSM.Entity, {
     /** @param {Element} domRelationElement */
     initialize: function($super, domRelationElement) {
         $super(domRelationElement);
+        /** @type Hash */
+        this.members = $H();
         /** @type OSM.Relation.Member[] */
-        this.members = [];
+        this.sorted = [];
         if (domRelationElement!=undefined) {
             domNodes = $A(domRelationElement.childNodes);
             domNodes.each(
                 function(n) {
                     if(n.nodeType==Node.ELEMENT_NODE && n.tagName=='member') {
-                        this.members.push(new OSM.Relation.Member(n));
+                        var member = new OSM.Relation.Member(n);
+                        this.members.set(member.getRef(), member);
+                        this.sorted.push(member);
                     }
                 },
                 this
@@ -29,9 +33,16 @@ OSM.Relation = Class.create(OSM.Entity, {
         }
     },
 
-    /** @type OSM.Relation.Member[] */
+    /**
+     * @type Hash
+     */
     getMembers: function() {
         return this.members;
+    },
+
+    /** @type OSM.Relation.Member[] */
+    getSorted: function() {
+        return this.sorted
     }
 
 });

@@ -112,7 +112,7 @@ Application.RouteManager.ListView = Class.create({
         header.observeA(this.headerCallbacks);       
 
         var sublist = li.appendElement('ul');
-        relation.getMembers().each(this.processMembers, {
+        relation.getSorted().each(this.processMembers, {
             view: this,
             relation: relation,
             container: sublist
@@ -122,12 +122,18 @@ Application.RouteManager.ListView = Class.create({
     headerCallbacks: {
         mouseover: function(event) {
             this.li.addClassName('hoverListItem');
-            this.view.manager.layer && this.view.manager.layer.highlightEntity(this.list);
+            this.relation.getMembers().each(function(pair) {
+                var entity = this.osm.get(pair.value.getRef());
+                this.layer.highlightEntity(entity);
+            }, this.view.manager);            
         },
 
         mouseout: function(event) {
             this.li.removeClassName('hoverListItem');
-            this.view.manager.layer && this.view.manager.layer.unhighlightEntity(this.list);
+            this.relation.getMembers().each(function(pair) {
+                var entity = this.osm.get(pair.value.getRef());
+                this.layer.unhighlightEntity(entity);
+            }, this.view.manager);
         },
 
         click: function(event) {
@@ -139,16 +145,16 @@ Application.RouteManager.ListView = Class.create({
     itemCallbacks: {
         mouseover: function(event) {
             this.addClassName('hoverListItem');
-            this.manager.layer && this.manager.layer.highlightEntity(this.amenity);
+            this.manager.layer && this.manager.layer.highlightEntity(this.entity);
         },
 
         mouseout: function(event) {
             this.removeClassName('hoverListItem');
-            this.manager.layer && this.manager.layer.unhighlightEntity(this.amenity);
+            this.manager.layer && this.manager.layer.unhighlightEntity(this.entity);
         },
 
         click: function(event) {
-            this.manager.layer && this.manager.layer.zoomToEntity(this.amenity);
+            this.manager.layer && this.manager.layer.zoomToEntity(this.entity);
         }
     },
 

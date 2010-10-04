@@ -106,7 +106,7 @@ Application.EntityLayer = OpenLayers.Class(OpenLayers.Layer.Vector, {
         var ge = OSM.Geometry.getGeometry(entity, this.osm);
         var g = ge.getGeometry();
         var gt = this.map.transformTo(g);
-        var feature = new OpenLayers.Feature.Vector(gt, {gEntity: ge });
+        var feature = new OpenLayers.Feature.Vector(gt, {gEntity: ge, entity: entity });
         feature.entity = entity;
         return feature;
     },
