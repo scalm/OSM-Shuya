@@ -97,7 +97,7 @@ Tab.Bar = Class.create({
      */
     onClick: function(tab, event) {
         Tab.fireClick(tab);
-        return false;
+        event.stop();
     }
 
 });

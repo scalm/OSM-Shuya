@@ -87,7 +87,7 @@ Application.ToolWindow = Class.create({
     */
     onCloseClick: function(event) {
         this.hide();
-        return false;
+        event.stop();
     },
 
     /**
