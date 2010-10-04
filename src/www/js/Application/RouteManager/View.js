@@ -47,7 +47,7 @@ Application.RouteManager.ListView = Class.create({
             src: imgSrc
         });
 
-        if(entity.getTag('highway')=='bus_stop') {
+        if(entity.getTag('highway').match(/^bus_stop/)) {
             li.appendElement('img', {src: 'img/bus_stop.p.12.png'});
         }
 
@@ -68,9 +68,26 @@ Application.RouteManager.ListView = Class.create({
         var relation = pair.value;
         var li = this.element.appendElement('li', {'class' : 'group listItem'+(index % 2 + 1)});
 
+        /** @type Element */
         var header = li.appendElement('div', {'class' : 'header'});
         
         header.appendElement('div', {'class' : 'togglemark'});
+
+        var color = relation.getTag("colour");
+        if (color ===null) {
+            var colors = ['red', 'green', 'blue', 'yellow', 'maroon', 'navy'];
+            color = colors[Math.round(Math.random()*colors.length)];
+        }
+
+        header.appendElement('div', {
+            'class' : 'routeColor',
+            'style': 'background-color:'+color
+        });
+
+        var type = relation.getTag('route');
+        if (type) {
+            header.appendElement('span').update(type+"&nbsp;");
+        }
         var name = relation.getTag('name');
         var ref = relation.getTag('ref');
         var text = "";

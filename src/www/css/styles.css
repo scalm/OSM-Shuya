@@ -78,10 +78,9 @@ input#search {
 
 
 .routeColor {
-    float: left;
     height: 12px;
     width: 12px;
-    display:block;
+    display: inline-block;
     border: black 1px solid;
 }
 
