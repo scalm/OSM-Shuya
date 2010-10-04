@@ -61,15 +61,22 @@ then
 
     # Libraries
     mkdir -p "$DIST_WWW_DIR/lib" # dest-dir
-    cd "$DIST_WWW_DIR/lib/"
+    cd "$VENDOR_DIR"
 
     # Libraries > Prototype.js
-    cp -Lu "$VENDOR_DIR/prototype/dist/prototype.js" .
+    cp -Lu "prototype/dist/prototype.js" "$DIST_WWW_DIR/lib"
 
     # Libraries > OpenLayers
-    cp -Lu "$VENDOR_DIR/openlayers/build/OpenLayers.js" .
-    cp -LRu "$VENDOR_DIR/openlayers/img" .
-    cp -LRu "$VENDOR_DIR/openlayers/theme" .
+    cd openlayers
+    cp -Lu "build/OpenLayers.js" "$DIST_WWW_DIR/lib"
+    
+    mkdir -p "$DIST_WWW_DIR/lib/img"
+    find -L ./img \( ! -regex '.*/\..*' \) -type d -exec mkdir -p "$DIST_WWW_DIR/lib/"{} \;
+    find -L ./img \( ! -regex '.*/\..*' \) -type f -exec cp -u {} "$DIST_WWW_DIR/lib/"{} \;
+
+    mkdir -p "$DIST_WWW_DIR/lib/theme"
+    find -L ./theme \( ! -regex '.*/\..*' \) -type d -exec mkdir -p "$DIST_WWW_DIR/lib/"{} \;
+    find -L ./theme \( ! -regex '.*/\..*' \) -type f -exec cp -u {} "$DIST_WWW_DIR/lib/"{} \;
 
     # Configuration
 	mkdir -p "$DIST_WWW_DIR/config"
