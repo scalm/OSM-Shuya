@@ -43,14 +43,18 @@ Application.RouteManager.ListView = Class.create({
         var entity = this.view.manager.osm.get(member.getRef());
         // image
         var imgSrc = entity.getImage();
-        if (imgSrc) li.appendChild(new Element('img', {
+        if (imgSrc) li.appendElement('img', {
             src: imgSrc
-        }));
+        });
+
+        if(entity.getTag('highway')=='bus_stop') {
+            li.appendElement('img', {src: 'img/bus_stop.p.12.png'});
+        }
 
         // text
         var name = entity.getTag("name");
         var text = (name!=null) ? " " + name : "#"+entity.getId();
-        li.appendChild(document.createTextNode(text));
+        li.appendText(text);
 
         Object.extend(li, {
             manager: this.view.manager,
