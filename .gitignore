@@ -2,3 +2,4 @@ nbproject
 vendor
 dist
 distftp.sh
+distftp
