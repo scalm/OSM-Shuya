@@ -1,11 +1,11 @@
 /**
- * @class Route manager
+ * @class Manage routes
  */
 Application.RouteManager = Class.create({
 
     /**
      * @constructor
-     * @param {OSM.Route} route
+     * @param {OSM.Route} route Producer for routes.
      */
     initialize: function(route)
     {
@@ -61,7 +61,7 @@ Application.RouteManager = Class.create({
         this.styleMap.styles['default'].addRules([rule, rulePoint]);
     },
 
-    /** @public @static @type OpenLayers.StyleMap */
+    /** @private @type OpenLayers.StyleMap */
     styleMap: new OpenLayers.StyleMap({
         "default": new OpenLayers.Style({
             strokeWidth: 3,
@@ -92,8 +92,10 @@ Application.RouteManager = Class.create({
     }),
 
     /**
+     * Invokes when producer for routes gives new data.
+     *
      * @private @event
-     * @param {Application.Route} route
+     * @param {Application.Route} route Producer for routes.
      * @type void
      */
     onRouteUpdate: function(route) {
@@ -102,6 +104,8 @@ Application.RouteManager = Class.create({
     },
 
     /**
+     * Set filter and update dependencies.
+     *
      * @param {Application.Route.Filter} filter
      */
     setFilter: function(filter) {
@@ -111,10 +115,10 @@ Application.RouteManager = Class.create({
     },
 
     /**
-     * Show tooltip with amenity details.
+     * Show tooltip with route details.
      *
      * @private
-     * @param {OSM.Geometry.Entity} entity
+     * @param {OSM.Geometry.Entity} entity OSM entity
      * @type void
      */
     showTooltip: function(entity) {
@@ -132,27 +136,6 @@ Application.RouteManager = Class.create({
 
     /** @private @type Application.EntityPopup */
     popup: null,
-
-    /**
-     * Invoke when feature was selected
-     *
-     * @private @event
-     * @param {OpenLayers.Feature} feature
-     * @type void
-     */
-    onSelectFeature: function(feature) {
-
-    },
-
-    /**
-     * Invoke when feature was unselected
-     * @private @event
-     * @param {OpenLayers.Feature} feature
-     * @type void
-     */
-    onUnselectFeature: function(feature) {
-
-    },
 
     /**
      * Update layer, features on layer, apply new filter on amenities.
@@ -181,6 +164,8 @@ Application.RouteManager = Class.create({
     },
 
     /**
+     * Invokes when tab was selected.
+     *
      * @private @event
      * @param {Tab.Tab} tab
      * @param {Boolean} selected
@@ -202,6 +187,8 @@ Application.RouteManager = Class.create({
     },
 
     /**
+     * Show or hide gui of this routes manager.
+     * 
      * @param {Boolean} show
      * @type void
      */
@@ -213,6 +200,9 @@ Application.RouteManager = Class.create({
 
 });
 
+/**
+ * Implements rule that produces color for route.
+ */
 var RouteRule = OpenLayers.Class(OpenLayers.Rule, {
 
     /**
@@ -223,6 +213,11 @@ var RouteRule = OpenLayers.Class(OpenLayers.Rule, {
         OpenLayers.Rule.prototype.initialize.apply(this, arguments);
     },
 
+    /**
+     * Evaluate rule.
+     *
+     * @param {OpenLayers.Feature.Vector}
+     */
     evaluate: function(feature) {
         var applies = true;
         if (this.type) {
@@ -240,16 +235,15 @@ var RouteRule = OpenLayers.Class(OpenLayers.Rule, {
                 });
                 applies = !!pair;
                 if (applies) {
-                    relation = pair.value;
+                    var relation = pair.value;
                     var color = relation.getTag('colour');
-                    this.symbolizer = {
-                        strokeColor: color
-                    }
+                    this.symbolizer = this.symbolizer || {};
+                    this.symbolizer.strokeColor = color;
                 }
             } else {
                 applies = false;
             }
-        };
+        }
         return applies;
     }
 });
