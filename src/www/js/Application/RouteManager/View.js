@@ -119,7 +119,7 @@ Application.RouteManager.ListView = Class.create({
     processMembers: function(member, index) {
         var li = this.container.appendElement('li', {'class' : 'member listItem'+((index) % 2 + 1)});
 
-        var entity = this.view.manager.osm.get(member.getRef());
+        var entity = application.osm.get(member.getRef());
         // image
         var imgSrc = entity.getImage();
         if (imgSrc) li.appendElement('img', {
@@ -161,7 +161,7 @@ Application.RouteManager.ListView = Class.create({
         mouseover: function(event) {
             this.li.addClassName('hoverListItem');
             this.relation.getMembers().each(function(pair) {
-                var entity = this.osm.get(pair.value.getRef());
+                var entity = application.osm.get(pair.value.getRef());
                 this.layer.highlightEntity(entity);
             }, this.view.manager);            
         },
@@ -169,7 +169,7 @@ Application.RouteManager.ListView = Class.create({
         mouseout: function(event) {
             this.li.removeClassName('hoverListItem');
             this.relation.getMembers().each(function(pair) {
-                var entity = this.osm.get(pair.value.getRef());
+                var entity = application.osm.get(pair.value.getRef());
                 this.layer.unhighlightEntity(entity);
             }, this.view.manager);
         },

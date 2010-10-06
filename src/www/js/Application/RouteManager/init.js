@@ -5,24 +5,10 @@ Application.RouteManager = Class.create({
 
     /**
      * @constructor
-     * @param {Shuya} shuya
      * @param {OSM.Route} route
      */
-    initialize: function(shuya, route)
+    initialize: function(route)
     {
-        /**
-         * @private
-         * @deprecated
-         * @type Shuya
-         */
-        this.shuya = shuya;
-
-        /** @private @type Application.Map */
-        this.map = shuya.map;
-
-        /** @private @type OSM */
-        this.osm = shuya.osm;
-
         /** @private @type OSM.Amenity */
         this.route = route;
         this.route.observe("onUpdate", this.onRouteUpdate.bind(this));
@@ -35,10 +21,9 @@ Application.RouteManager = Class.create({
         /** @private @type OpenLayers.Layer.Vector */
         this.layer = new Application.EntityLayer( "Routes", {
             visibility: false,
-            styleMap: this.styleMap,
-            osm: this.osm
+            styleMap: this.styleMap
         });
-        this.map.addLayer(this.layer);
+        application.map.addLayer(this.layer);
 /*
         this.layer.selectControl.onHighlight  = function(feature) {
             if (this.popupHideTimer) {
@@ -118,15 +103,15 @@ Application.RouteManager = Class.create({
      */
     /*showAmenityTooltip: function(gAmenity) {
         if(gAmenity == null) {
-            if(this.popup) this.map.removePopup(this.popup);
+            if(this.popup) application.map.removePopup(this.popup);
             return;
         }
-        this.popup = new Application.AmenityManager.Popup(this.map, gAmenity, {
+        this.popup = new Application.AmenityManager.Popup(application.map, gAmenity, {
             zoom: function(amenity) {
                 this.layer.zoomToEntity(amenity);
             }.bind(this)
         });
-        this.map.addPopup(this.popup, true);
+        application.map.addPopup(this.popup, true);
     },*/
 
     /** @private @type Application.AmenityManager.Popup */
@@ -171,7 +156,7 @@ Application.RouteManager = Class.create({
             var relation = pair.value;
             relation.getMembers().each(function(pair) {
                 var member = pair.value;
-                var entity = this.osm.get(member.getRef());
+                var entity = application.osm.get(member.getRef());
                 if(!this.layer.getFeatureBy('entity', entity)) {
                     this.layer.addEntity(entity);
                 }

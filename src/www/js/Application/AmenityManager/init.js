@@ -5,24 +5,10 @@ Application.AmenityManager = Class.create({
 
     /**
      * @constructor
-     * @param {Shuya} shuya
      * @param {OSM.Amenity} amenity
      */
-    initialize: function(shuya, amenity)
+    initialize: function(amenity)
     {
-        /**
-         * @private
-         * @deprecated
-         * @type Shuya
-         */
-        this.shuya = shuya;
-
-        /** @private @type Application.Map */
-        this.map = shuya.map;
-
-        /** @private @type OSM */
-        this.osm = shuya.osm;
-
         /** @private @type OSM.Amenity */
         this.amenity = amenity;
         this.amenity.observe("onUpdate", this.onAmenityUpdate.bind(this));
@@ -35,10 +21,9 @@ Application.AmenityManager = Class.create({
         /** @private @type OpenLayers.Layer.Vector */
         this.layer = new Application.EntityLayer( "Amenity", {
             visibility: false,
-            styleMap: this.styleMap,
-            osm: this.osm
+            styleMap: this.styleMap
         });
-        this.map.addLayer(this.layer);
+        application.map.addLayer(this.layer);
 
         this.layer.selectControl.onHighlight  = function(feature) {
             if (this.popupHideTimer) {
@@ -114,15 +99,15 @@ Application.AmenityManager = Class.create({
      */
     showAmenityTooltip: function(amenity) {
         if(amenity == null) {
-            if(this.popup) this.map.removePopup(this.popup);
+            if(this.popup) application.map.removePopup(this.popup);
             return;
         }
-        this.popup = new Application.AmenityManager.Popup(this.map, amenity, this.osm, {
+        this.popup = new Application.AmenityManager.Popup(application.map, amenity, {
             zoom: function(amenity) {
                 this.layer.zoomToEntity(amenity);
             }.bind(this)
         });
-        this.map.addPopup(this.popup, true);
+        application.map.addPopup(this.popup, true);
     },
 
     /** @private @type Application.AmenityManager.Popup */

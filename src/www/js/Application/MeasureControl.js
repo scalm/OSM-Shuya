@@ -89,13 +89,13 @@ Application.MeasureControl = OpenLayers.Class(OpenLayers.Control.Measure, {
 
         /*var point = geometry.getVertices(true)[1];
 
-        var markersLayer = Shuya.map.getLayersByName("Markers")[0];
+        var markersLayer = application.map.getLayersByName("Markers")[0];
         var ll = new OpenLayers.LonLat(point.x, point.y);
         //markersLayer.addMarker(new OpenLayers.Marker(ll));
         var tm  = new OpenLayers.TextMarker(ll, measure.toFixed(3) + "&nbsp;" + units);
         markersLayer.addMarker(tm);
 
-        Shuya.layers.measurements.removeFeatures(Shuya.layers.measurements.features);
+        application.layers.measurements.removeFeatures(application.layers.measurements.features);
         var ng = geometry.clone();
         var f = new OpenLayers.Feature.Vector(ng);
         var f2 = new OpenLayers.Feature.Vector(ng.getVertices(true)[0].clone());
@@ -116,7 +116,7 @@ Application.MeasureControl = OpenLayers.Class(OpenLayers.Control.Measure, {
         /*var markersLayer = Shuya.map.getLayersByName("Markers")[0];
 
         if(this.tm2!=null) {
-            markersLayer.removeMarker(Shuya.tm2);
+            markersLayer.removeMarker(application.tm2);
         }
         var ll = new OpenLayers.LonLat(point.x, point.y);
         var stat = this.getBestLength(geometry.geometry);

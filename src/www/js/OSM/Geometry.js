@@ -2,18 +2,16 @@
 OSM.Entity.prototype.geometry = null;
 
 /**
- * @param {OSM} osm OSM
  * @type {OpenLayers.Geometry}
  */
-OSM.Entity.prototype.getGeometry = function(osm) {
+OSM.Entity.prototype.getGeometry = function() {
     return this.geometry;
 }
 
 /**
- * @param {OSM} osm OSM
  * @type {OpenLayers.Geometry}
  */
-OSM.Node.prototype.getGeometry = function(osm) {
+OSM.Node.prototype.getGeometry = function() {
     if (!this.geometry) {
         this.geometry = new OpenLayers.Geometry.Point(this.getLon(), this.getLat());
     }
@@ -21,14 +19,13 @@ OSM.Node.prototype.getGeometry = function(osm) {
 }
 
 /**
- * @param {OSM} osm OSM
  * @type {OpenLayers.Geometry}
  */
-OSM.Way.prototype.getGeometry = function(osm) {
+OSM.Way.prototype.getGeometry = function() {
     if (!this.geometry) {
         var points = [];
         this.nodes.each(function(id) {
-            var node = osm.get(id);
+            var node = application.osm.get(id);
             points.push(node.getGeometry());
         });
         if(this.nodes.length>2 && this.nodes[0] == this.nodes[this.nodes.length-1])
@@ -43,7 +40,7 @@ OSM.Way.prototype.getGeometry = function(osm) {
  * @param {OSM} osm OSM
  * @type {OpenLayers.Geometry}
  */
-OSM.Relation.prototype.getGeometry = function(osm) {
+OSM.Relation.prototype.getGeometry = function() {
     if (!this.geometry) {
         var collection = new Array();
         var way;
@@ -51,12 +48,12 @@ OSM.Relation.prototype.getGeometry = function(osm) {
         this.members.each(function(pair) {
             var member = pair.value;
             if(member.getType()=='way') {
-                way = osm.get(member.getRef());
-                collection.push(way.getGeometry(osm));
+                way = application.osm.get(member.getRef());
+                collection.push(way.getGeometry());
             }
             else
             if(member.getType()=='node') {
-                node = osm.get(member.getRef());
+                node = application.osm.get(member.getRef());
                 collection.push(node.getGeometry());
             }
         });

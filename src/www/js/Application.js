@@ -98,7 +98,7 @@ String.prototype.containsIgnoreCase = function(s) {
 };
 
 Element.prototype.observeA = function(callbacks) {
-    for ( c in callbacks) {
+    for ( var c in callbacks) {
         if (callbacks.hasOwnProperty(c)) {
             this.observe(c, callbacks[c]);
         }
@@ -178,9 +178,52 @@ var Application = {
         //console.log("Application.initialize");
         new Tab.Bar($("tabBar"));
         //OpenLayers.ImgPath = 'lib/img/';
-        shuya = new Shuya();
-        application = shuya;
-        shuya.createMap('map',{});
+
+        /** @type Application.Map */
+        this.map = null;
+        /** @type OpenLayers.Projection */
+        this.epsg4326 = new OpenLayers.Projection("EPSG:4326");
+        /** @type OSM */
+        this.osm = new OSM();
+        application = this;
+        this.createMap('map',{});
+    },
+
+    /** @param {String} divName
+     * @param {Object} options
+     */
+    createMap: function (divName, options) {
+        OpenLayers.Lang.setCode('ru');
+        options = options || {};
+
+        this.map = new Application.Map(divName, {});
+
+        //this.initLayers();
+        //this.initControls();
+
+        /** @type Application.Amenity */
+        this.amenity = new Application.Amenity(this);
+        this.amenityManager = new Application.AmenityManager(this.amenity);
+        this.amenity.load();
+
+        this.route = new Application.Route(this);
+        this.routeManager = new Application.RouteManager(this.route);
+        this.route.load();
+    },
+
+    /** @param {String} url
+     * @param {Function} success
+     * @type void
+     */
+    loadOSM: function(url) {
+        new Ajax.Request(url, {
+            method: 'get',
+            onSuccess: function(req) {
+                var document = req.responseXML;
+                var osm = new OSM(document);
+                application.osm.update(osm);
+            }
+        });
     }
 };
 
@@ -206,7 +249,6 @@ var Application = {
         "Application/Map.js",
         "Application/ToolWindow.js",
         "Application/Views.js",
-        "Shuya.js",
         
 
         "Application/AmenityManager/init.js",

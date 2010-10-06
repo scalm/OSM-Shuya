@@ -103,7 +103,7 @@ Application.EntityLayer = OpenLayers.Class(OpenLayers.Layer.Vector, {
      */
     getFeature: function(entity) {
         if (entity instanceof Array) entity = entity.value;
-        var g = entity.getGeometry(this.osm);
+        var g = entity.getGeometry();
         var gt = this.map.transformTo(g);
         var feature = new OpenLayers.Feature.Vector(gt, {entity: entity});
         feature.entity = entity;
@@ -116,7 +116,7 @@ Application.EntityLayer = OpenLayers.Class(OpenLayers.Layer.Vector, {
      */
     zoomToEntity: function(entity) {
         var feature = this.getFeatureBy('entity', entity);
-        var ge = entity.getGeometry(this.osm);
+        var ge = entity.getGeometry();
         var p = ge.getCentroid();
         this.map.setMapCenter(new OpenLayers.LonLat(p.x, p.y), 17);
         if (feature) {

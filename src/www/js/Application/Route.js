@@ -1,7 +1,6 @@
 Application.Route = Class.create({
 
-    /** @param {Shuya} shuya */
-    initialize: function(shuya) {
+    initialize: function() {
         /** @type Object */
         this.events = {
             /**
@@ -10,9 +9,7 @@ Application.Route = Class.create({
             onUpdate: $A()
         };
 
-        /** @type Shuya */
-        this.shuya = shuya;
-        this.shuya.osm.observe("onUpdate", this.onSuccess.bind(this));
+        application.osm.observe("onUpdate", this.onSuccess.bind(this));
         /** @type Hash */
         this.hash = $H();
     },
@@ -24,7 +21,7 @@ Application.Route = Class.create({
 
     /** @type void */
     load: function() {
-        this.shuya.loadOSM('data/RouteRelations.xml');
+        application.loadOSM('data/RouteRelations.xml');
     },
 
     /**

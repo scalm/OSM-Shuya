@@ -7,14 +7,13 @@ Application.AmenityManager.Popup = {
      * @constructor
      * @param {Application.Map} map Map.
      * @param {OSM.Entity} amenity OSM Entity.
-     * @param {OSM} osm OSM
      * @param {Object} callbacks Object with callbacks. Supports 'zoom'.
      */
-    initialize: function(map, amenity, osm, callbacks) {
+    initialize: function(map, amenity, callbacks) {
         /** @type Object */
         this.callbacks = callbacks || {};
-        this.osm = osm;
-        var g = amenity.getGeometry(this.osm).getCentroid();
+
+        var g = amenity.getGeometry().getCentroid();
         g = map.transformTo(g);
         var pp = new OpenLayers.LonLat(g.x, g.y);
         var pix = map.getPixelFromLonLat(pp);
@@ -103,7 +102,7 @@ Application.AmenityManager.Popup = {
 
         var div = new Element('div');
 
-        var g = amenity.getGeometry(this.osm).getCentroid();
+        var g = amenity.getGeometry().getCentroid();
         div.appendChild(new Element('div').update('Координаты: '+g.x.toFixed(5)+" "+g.y.toFixed(5)));
         e.appendChild(div);
 
