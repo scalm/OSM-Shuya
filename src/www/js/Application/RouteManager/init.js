@@ -59,7 +59,6 @@ Application.RouteManager = Class.create({
         });
 
         this.styleMap.styles['default'].addRules([rule, rulePoint]);
-
     },
 
     /** @public @static @type OpenLayers.StyleMap */
@@ -78,7 +77,8 @@ Application.RouteManager = Class.create({
             fillColor: '#FF0000',
             pointRadius: 5,
             strokeOpacity: 1,
-            fillOpacity: 1
+            fillOpacity: 1,
+            display: ''
         },
         "select": {
             strokeWidth: 3,
@@ -86,7 +86,8 @@ Application.RouteManager = Class.create({
             fillColor: '#00FF00',
             pointRadius: 5,
             strokeOpacity: 1,
-            fillOpacity: 1
+            fillOpacity: 1,
+            display: ''
         }
     }),
 
