@@ -42,10 +42,23 @@ Application.RouteManager = Class.create({
 
         /** @private @type Application.Route.Filter */
         this.filter = null;
+        //[442943842.5, 221471921.25, 110735960.625, 55367980.3125,
+        //27683990.15625, 13841995.078125, 6920997.5390625, 3460498.76953125,
+        //1730249.384765625, 865124.6923828125, 432562.34619140625, 216281.17309570312,
+        //108140.58654785156, 54070.29327392578, 27035.14663696289, 13517.573318481445]
+        var rule = new RouteRule({
+            route: this.route,
+            type: 'Line',
+            maxScaleDenominator: 432562.34619140625
+        });
 
-        var rule = new RouteRule({ route: this.route });
-        
-        this.styleMap.styles['default'].addRules([rule]);
+        var rulePoint = new RouteRule({
+            route: this.route,
+            type: 'Point',
+            maxScaleDenominator: 216281.17309570312
+        });
+
+        this.styleMap.styles['default'].addRules([rule, rulePoint]);
 
     },
 
@@ -201,12 +214,23 @@ Application.RouteManager = Class.create({
 
 var RouteRule = OpenLayers.Class(OpenLayers.Rule, {
 
-    initialize: function() {
+    /**
+     * @constructor
+     * @param {Object} options
+     */
+    initialize: function(options) {
         OpenLayers.Rule.prototype.initialize.apply(this, arguments);
     },
 
     evaluate: function(feature) {
-        var applies = OpenLayers.Rule.prototype.evaluate.apply(this, arguments);
+        var applies = true;
+        if (this.type) {
+            var prefix = OpenLayers.Style.prototype.getSymbolizerPrefix(feature.geometry);
+            applies = this.type == prefix;
+        }
+        if (applies) {
+            applies = OpenLayers.Rule.prototype.evaluate.apply(this, arguments);
+        }
         if (applies) {
             var entity = feature.attributes.entity;
             if (entity) {
