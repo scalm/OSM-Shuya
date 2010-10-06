@@ -213,6 +213,7 @@ var Application = {
         "Application/Amenity/Filter.js",
 
         "Application/Route.js",
+        "Application/Route/Lang.js",
 
         "Application/RouteManager/init.js",
         "Application/RouteManager/View.js",

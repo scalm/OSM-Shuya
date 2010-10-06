@@ -18,10 +18,11 @@ Application.RouteManager.ListView = Class.create({
      * @type void
      */
     update: function(hash) {
-  /*      var groups = $H();
+        var groups = $H();
 
+        // assume tag 'type'='route'
         var f = function(pair) {
-            var type = pair.value.getTag("amenity");
+            var type = pair.value.getTag('route');
             if (groups.get(type) == undefined) {
                 groups.set(type, $A());
             }
@@ -29,12 +30,90 @@ Application.RouteManager.ListView = Class.create({
         };
 
         hash.eachFilter(f, this, this.manager.filter ? this.manager.filter.filter : null, this.manager.filter);
-*/
+
         var oldElement = this.element;
         this.element = new Element('ul', {'class': 'routeList'});
         if(oldElement) oldElement.replace(this.element);
+        groups.each(this.processGroups, {
+            view: this,
+            container: this.element
+        });
+    },
 
-        hash.each(this.processHash, this);
+    processGroups: function(pair, index) {
+        var group = pair.key;
+        var relList = pair.value;
+
+        var li = this.container.appendElement('li', {'class' : 'group listItem'+(index % 2 + 1)});
+
+        /** @type Element */
+        var header = li.appendElement('div', {'class' : 'header'});
+        header.appendElement('div', {'class' : 'togglemark'});
+        header.appendText(Application.Route.Lang.translate(group));
+
+        Object.extend(header, {
+            view: this.view,
+            li: li,
+            group: group
+        });
+
+        header.observeA(this.view.groupCallbacks);
+        var sublist = li.appendElement('ul', { 'class': 'routeList' });
+        relList.each(this.view.processRoutes, {
+            view: this.view,
+            container: sublist
+        });        
+    },
+
+    processRoutes: function(relation, index) {
+        //var id = pair.key;
+        //var relation = pair.value;
+        var li = this.container.appendElement('li', {'class' : 'group listItem'+(index % 2 + 1)});
+
+        /** @type Element */
+        var header = li.appendElement('div', {'class' : 'header'});
+
+        header.appendElement('div', {'class' : 'togglemark'});
+
+        var color = relation.getTag("colour");
+        if (color ===null) {
+            var colors = ['red', 'green', 'blue', 'yellow', 'maroon', 'navy'];
+            color = colors[Math.round(Math.random()*colors.length)];
+        }
+
+        header.appendElement('div', {
+            'class' : 'routeColor',
+            'style': 'background-color:'+color
+        });
+
+        var name = relation.getTag('name');
+        var ref = relation.getTag('ref');
+        var text = "";
+        if(name!=null) {
+            text = text + name;
+            if(ref) {
+                text = text + " ("+ref+")";
+            }
+        } else {
+            if(ref)
+                text = "Маршрут "+ref;
+        }
+
+        header.appendText(text);
+
+        Object.extend(header, {
+            view: this.view,
+            li: li,
+            relation: relation
+        });
+
+        header.observeA(this.view.headerCallbacks);
+        var sublist = li.appendElement('ul');
+        relation.getSorted().each(this.view.processMembers, {
+            view: this.view,
+            relation: relation,
+            container: sublist
+        });
     },
 
     processMembers: function(member, index) {
@@ -57,66 +136,25 @@ Application.RouteManager.ListView = Class.create({
         li.appendText(text);
 
         Object.extend(li, {
-            manager: this.view.manager,
+            view: this.view,
             entity: entity
         })
         li.observeA(this.view.itemCallbacks);
     },
 
-    processHash: function(pair, index) {
-        var id = pair.key;
-        var relation = pair.value;
-        var li = this.element.appendElement('li', {'class' : 'group listItem'+(index % 2 + 1)});
+    groupCallbacks: {
+        mouseover: function(event) {
+            this.li.addClassName('hoverListItem');
+        },
 
-        /** @type Element */
-        var header = li.appendElement('div', {'class' : 'header'});
-        
-        header.appendElement('div', {'class' : 'togglemark'});
+        mouseout: function(event) {
+            this.li.removeClassName('hoverListItem');
+        },
 
-        var color = relation.getTag("colour");
-        if (color ===null) {
-            var colors = ['red', 'green', 'blue', 'yellow', 'maroon', 'navy'];
-            color = colors[Math.round(Math.random()*colors.length)];
+        click: function(event) {
+            this.li.toggleClassName('opened');
+            event.stop();
         }
-
-        header.appendElement('div', {
-            'class' : 'routeColor',
-            'style': 'background-color:'+color
-        });
-
-        var type = relation.getTag('route');
-        if (type) {
-            header.appendElement('span').update(type+"&nbsp;");
-        }
-        var name = relation.getTag('name');
-        var ref = relation.getTag('ref');
-        var text = "";
-        if(name!=null) {
-            text = text + name;
-            if(ref) {
-                text = text + " ("+ref+")";
-            }
-        } else {
-            if(ref)
-                text = "Маршрут "+ref;
-        }
-
-        header.appendText(text);
-
-        Object.extend(header, {
-            view: this,
-            li: li,
-            relation: relation
-        });
-        
-        header.observeA(this.headerCallbacks);       
-
-        var sublist = li.appendElement('ul');
-        relation.getSorted().each(this.processMembers, {
-            view: this,
-            relation: relation,
-            container: sublist
-        });
     },
 
     headerCallbacks: {
@@ -145,16 +183,16 @@ Application.RouteManager.ListView = Class.create({
     itemCallbacks: {
         mouseover: function(event) {
             this.addClassName('hoverListItem');
-            this.manager.layer && this.manager.layer.highlightEntity(this.entity);
+            this.view.manager.layer && this.view.manager.layer.highlightEntity(this.entity);
         },
 
         mouseout: function(event) {
             this.removeClassName('hoverListItem');
-            this.manager.layer && this.manager.layer.unhighlightEntity(this.entity);
+            this.view.manager.layer && this.view.manager.layer.unhighlightEntity(this.entity);
         },
 
         click: function(event) {
-            this.manager.layer && this.manager.layer.zoomToEntity(this.entity);
+            this.view.manager.layer && this.view.manager.layer.zoomToEntity(this.entity);
         }
     },
 

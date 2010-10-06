@@ -127,14 +127,14 @@ input#search {
 }
 
 /* ul li div */
-.group .header {
+.group > .header {
     padding: 5px;
     line-height: 14pt;
     cursor: pointer;
 }
 
 /* ul li ul */
-.group ul {
+.group > ul {
     list-style-type: none;
     padding: 0px;
     margin: 5px 0px;
@@ -144,11 +144,11 @@ input#search {
 }
 
 /* ul li ul */
-.group.opened ul {
+.group.opened > ul {
     display: block;
 }
 
-.group .togglemark {
+.group > .header .togglemark {
     width: 12px;
     height: 12px;
     background-repeat: no-repeat;
@@ -158,7 +158,7 @@ input#search {
     padding-right: 3px;
 }
 
-.group.opened .togglemark {
+.group.opened > .header .togglemark {
     background-image: url('../img/collapse.gif');
     background-position: 0px 1px;
 }
