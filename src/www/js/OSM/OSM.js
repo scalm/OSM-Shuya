@@ -89,16 +89,3 @@ var OSM = Class.create({
     
 }, EventSupport);
 
-// initialization
-(function() {
-    var jsfiles = [
-        'OSM/Tags.js',
-        'OSM/Entity.js',
-        'OSM/Node.js',
-        'OSM/Way.js',
-        'OSM/Relation.js',
-        'OSM/Geometry.js'
-    ];
-    loadLinkedScripts('OSM/OSM.js', jsfiles);
-})();
-

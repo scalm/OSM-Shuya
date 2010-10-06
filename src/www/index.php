@@ -30,7 +30,7 @@
         <meta name="keywords" content="Карта,Шуя,Map,Shuya,OSM,OpenStreetMap,город,Шуи,Шую,Шуе" />
         <meta name="google-site-verification" content="oiePqJOTFLVooU7rAe4J9MnJNt6PkQzt2dCA9nU6Bdc" />
         <title>Карта города Шуя Ивановской области</title>
-        <link rel="stylesheet" href="theme/default/style.css" type="text/css" />
+        <link rel="stylesheet" href="<?= OL_THEME_PATH ?>/style.css" type="text/css" />
         <link rel="stylesheet" href="css/styles.css" type="text/css" />
         <link rel="stylesheet" href="css/tabs.css" type="text/css" />
         <link rel="stylesheet" href="css/mapcontrols.css" type="text/css" />

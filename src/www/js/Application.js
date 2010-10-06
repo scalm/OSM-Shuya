@@ -175,10 +175,9 @@ var EventSupport = {
  */
 var Application = {
     initialize: function() {
-        Application.initializeView();
         //console.log("Application.initialize");
         new Tab.Bar($("tabBar"));
-        OpenLayers.ImgPath = 'lib/img/';
+        //OpenLayers.ImgPath = 'lib/img/';
         shuya = new Shuya();
         application = shuya;
         shuya.createMap('map',{});
@@ -188,6 +187,13 @@ var Application = {
 (function() {
     var appFiles = [
         "OSM/OSM.js",
+        'OSM/Tags.js',
+        'OSM/Entity.js',
+        'OSM/Node.js',
+        'OSM/Way.js',
+        'OSM/Relation.js',
+        'OSM/Geometry.js',
+
         "Application/SelectFeatureEx.js",
         "Application/MeasureControl.js",
         "Application/MeasureValueControl.js",
