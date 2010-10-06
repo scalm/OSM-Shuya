@@ -24,18 +24,17 @@ Application.RouteManager = Class.create({
             styleMap: this.styleMap
         });
         application.map.addLayer(this.layer);
-/*
+
         this.layer.selectControl.onHighlight  = function(feature) {
             if (this.popupHideTimer) {
                 window.clearInterval(this.popupHideTimer);
             }
-            this.showAmenityTooltip(feature.attributes.entity);
+            this.showTooltip(feature.attributes.entity);
         }.bind(this);
 
         this.layer.selectControl.onUnhighlight  = function() {
-            this.popupHideTimer = window.setTimeout(this.showAmenityTooltip.bind(this), 5000, null)
+            this.popupHideTimer = window.setTimeout(this.showTooltip.bind(this), 5000, null)
         }.bind(this);
-*/
 
 
         /** @private @type Application.Route.Filter */
@@ -98,24 +97,24 @@ Application.RouteManager = Class.create({
      * Show tooltip with amenity details.
      *
      * @private
-     * @param {OSM.Geometry.Entity} gAmenity
+     * @param {OSM.Geometry.Entity} entity
      * @type void
      */
-    /*showAmenityTooltip: function(gAmenity) {
-        if(gAmenity == null) {
+    showTooltip: function(entity) {
+        if(entity == null) {
             if(this.popup) application.map.removePopup(this.popup);
             return;
         }
-        this.popup = new Application.AmenityManager.Popup(application.map, gAmenity, {
-            zoom: function(amenity) {
-                this.layer.zoomToEntity(amenity);
+        this.popup = new Application.EntityPopup(application.map, entity, {
+            zoom: function(entity) {
+                this.layer.zoomToEntity(entity);
             }.bind(this)
         });
         application.map.addPopup(this.popup, true);
-    },*/
+    },
 
-    /** @private @type Application.AmenityManager.Popup */
-    //popup: null,
+    /** @private @type Application.EntityPopup */
+    popup: null,
 
     /**
      * Invoke when feature was selected

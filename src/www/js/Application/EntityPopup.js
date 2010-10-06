@@ -1,19 +1,19 @@
 /**
- * @class Popup with amenity details.
+ * @class Popup with entity details.
  */
-Application.AmenityManager.Popup = {
+Application.EntityPopup = {
 
     /**
      * @constructor
      * @param {Application.Map} map Map.
-     * @param {OSM.Entity} amenity OSM Entity.
+     * @param {OSM.Entity} entity OSM Entity.
      * @param {Object} callbacks Object with callbacks. Supports 'zoom'.
      */
-    initialize: function(map, amenity, callbacks) {
+    initialize: function(map, entity, callbacks) {
         /** @type Object */
         this.callbacks = callbacks || {};
 
-        var g = amenity.getGeometry().getCentroid();
+        var g = entity.getGeometry().getCentroid();
         g = map.transformTo(g);
         var pp = new OpenLayers.LonLat(g.x, g.y);
         var pix = map.getPixelFromLonLat(pp);
@@ -24,7 +24,7 @@ Application.AmenityManager.Popup = {
         OpenLayers.Popup.prototype.initialize.call(this, null, pp, new OpenLayers.Size(200,200),
             null, true, null);
 
-        var details = this.getAmenityDetailText(amenity);
+        var details = this.getDetailed(entity);
         this.contentDiv.update(details);
         OpenLayers.Util.extend(this, {
             opacity: 0.8,
@@ -42,17 +42,16 @@ Application.AmenityManager.Popup = {
      * @param {OSM.Entity} amenity
      * @type Element
      */
-    getAmenityDetailText: function(amenity) {
+    getDetailed: function(amenity) {
         var text = "";
         var tags = amenity.getTags();
 
         if(tags.get('name')) text += "<div style='font-weight: bold;'>"+tags.get('name')+"</div>";
 
-        var amenityType = Application.Amenity.Lang.translate(tags.get('amenity'));
-
+        var amenityType = tags.get('amenity');
         if(amenityType) {
             text += "<div>";
-            text += amenityType;
+            text += Application.Amenity.Lang.translate(amenityType);
             text += "</div>";
         }
 
@@ -117,13 +116,13 @@ Application.AmenityManager.Popup = {
 
         e.appendChild(document.createTextNode(' '));
         e.appendChild(new Element('a', {
-            href : '/maps/?zoom=17&lat="+g.y+"&lon="+g.x+"&layers=B00TTFT'
+            href : '/maps/?zoom=17&lat="+g.y+"&lon="+g.x+"'
         })
         .update('ссылка'));
         
         return e;
     },
 
-    CLASS_NAME: "Application.AmenityPopup"
+    CLASS_NAME: "Application.EntityPopup"
 };
-Application.AmenityManager.Popup = OpenLayers.Class(OpenLayers.Popup, Application.AmenityManager.Popup);
+Application.EntityPopup = OpenLayers.Class(OpenLayers.Popup, Application.EntityPopup);

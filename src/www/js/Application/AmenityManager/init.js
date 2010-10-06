@@ -102,7 +102,7 @@ Application.AmenityManager = Class.create({
             if(this.popup) application.map.removePopup(this.popup);
             return;
         }
-        this.popup = new Application.AmenityManager.Popup(application.map, amenity, {
+        this.popup = new Application.EntityPopup(application.map, amenity, {
             zoom: function(amenity) {
                 this.layer.zoomToEntity(amenity);
             }.bind(this)
@@ -110,7 +110,7 @@ Application.AmenityManager = Class.create({
         application.map.addPopup(this.popup, true);
     },
 
-    /** @private @type Application.AmenityManager.Popup */
+    /** @private @type Application.EntityPopup */
     popup: null,
 
     /**

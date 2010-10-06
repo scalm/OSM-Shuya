@@ -241,10 +241,10 @@ var Application = {
         "Application/MeasureControl.js",
         "Application/MeasureValueControl.js",
         "Application/EntityLayer.js",
+        "Application/EntityPopup.js",
 
         "EntityList.js",
         "Application/EntityFilter.js",
-
         
         "Application/Map.js",
         "Application/ToolWindow.js",
@@ -253,7 +253,6 @@ var Application = {
 
         "Application/AmenityManager/init.js",
         "Application/AmenityManager/View.js",
-        "Application/AmenityManager/Popup.js",
         "Application/AmenityManager/ToolWindow.js",
 
         "Application/Amenity.js",
@@ -265,7 +264,6 @@ var Application = {
 
         "Application/RouteManager/init.js",
         "Application/RouteManager/View.js",
-//        "Application/RouteManager/Popup.js",
         "Application/RouteManager/ToolWindow.js",
 
         "Tab/init.js",
