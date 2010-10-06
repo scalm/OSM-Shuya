@@ -160,10 +160,12 @@ Application.RouteManager.ListView = Class.create({
     headerCallbacks: {
         mouseover: function(event) {
             this.li.addClassName('hoverListItem');
+            this.view.manager.layer.dontPopup = true;
             this.relation.getMembers().each(function(pair) {
                 var entity = application.osm.get(pair.value.getRef());
                 this.layer.highlightEntity(entity);
-            }, this.view.manager);            
+            }, this.view.manager);
+            delete this.view.manager.layer.dontPopup;
         },
 
         mouseout: function(event) {

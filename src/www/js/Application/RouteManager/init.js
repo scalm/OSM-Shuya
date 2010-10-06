@@ -29,11 +29,15 @@ Application.RouteManager = Class.create({
             if (this.popupHideTimer) {
                 window.clearInterval(this.popupHideTimer);
             }
-            this.showTooltip(feature.attributes.entity);
+            console.log(this.layer.dontPopup);
+            if (!this.layer.dontPopup)
+                this.showTooltip(feature.attributes.entity);
         }.bind(this);
 
         this.layer.selectControl.onUnhighlight  = function() {
-            this.popupHideTimer = window.setTimeout(this.showTooltip.bind(this), 5000, null)
+            if (this.popup) {
+                this.popupHideTimer = window.setTimeout(this.showTooltip.bind(this), 5000, null);
+            }
         }.bind(this);
 
 
