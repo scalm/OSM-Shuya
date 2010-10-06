@@ -6,13 +6,15 @@ Application.AmenityManager.Popup = {
     /**
      * @constructor
      * @param {Application.Map} map Map.
-     * @param {OSM.Geometry.Entity} gAmenity Geometry of OSM Entity.
+     * @param {OSM.Entity} amenity OSM Entity.
+     * @param {OSM} osm OSM
      * @param {Object} callbacks Object with callbacks. Supports 'zoom'.
      */
-    initialize: function(map, gAmenity, callbacks) {
+    initialize: function(map, amenity, osm, callbacks) {
         /** @type Object */
         this.callbacks = callbacks || {};
-        var g = gAmenity.getGeometry().getCentroid();
+        this.osm = osm;
+        var g = amenity.getGeometry(this.osm).getCentroid();
         g = map.transformTo(g);
         var pp = new OpenLayers.LonLat(g.x, g.y);
         var pix = map.getPixelFromLonLat(pp);
@@ -23,7 +25,7 @@ Application.AmenityManager.Popup = {
         OpenLayers.Popup.prototype.initialize.call(this, null, pp, new OpenLayers.Size(200,200),
             null, true, null);
 
-        var details = this.getAmenityDetailText(gAmenity.getEntity(), gAmenity);
+        var details = this.getAmenityDetailText(amenity);
         this.contentDiv.update(details);
         OpenLayers.Util.extend(this, {
             opacity: 0.8,
@@ -39,10 +41,9 @@ Application.AmenityManager.Popup = {
     /**
      * @private
      * @param {OSM.Entity} amenity
-     * @param {OSM.Geometry.Entity} gEntity
      * @type Element
      */
-    getAmenityDetailText: function(amenity, gEntity) {
+    getAmenityDetailText: function(amenity) {
         var text = "";
         var tags = amenity.getTags();
 
@@ -99,28 +100,28 @@ Application.AmenityManager.Popup = {
 
         var e = new Element('div');
         e.update(text);
-        if (gEntity) {
-            var div = new Element('div');
 
-            var g = gEntity.getGeometry().getCentroid();
-            div.appendChild(new Element('div').update('Координаты: '+g.x.toFixed(5)+" "+g.y.toFixed(5)));
-            e.appendChild(div);
+        var div = new Element('div');
 
-            if (this.callbacks.zoom) {
-                var a = new Element('a', {
-                    href: '#'
-                });
-                a.observe('click', this.callbacks.zoom.bind(undefined, amenity));
-                a.update('Приблизить');
-                e.appendChild(a);
-            }
+        var g = amenity.getGeometry(this.osm).getCentroid();
+        div.appendChild(new Element('div').update('Координаты: '+g.x.toFixed(5)+" "+g.y.toFixed(5)));
+        e.appendChild(div);
 
-            e.appendChild(document.createTextNode(' '));
-            e.appendChild(new Element('a', {
-                href : '/maps/?zoom=17&lat="+g.y+"&lon="+g.x+"&layers=B00TTFT'
-            })
-            .update('ссылка'));
+        if (this.callbacks.zoom) {
+            var a = new Element('a', {
+                href: '#'
+            });
+            a.observe('click', this.callbacks.zoom.bind(undefined, amenity));
+            a.update('Приблизить');
+            e.appendChild(a);
         }
+
+        e.appendChild(document.createTextNode(' '));
+        e.appendChild(new Element('a', {
+            href : '/maps/?zoom=17&lat="+g.y+"&lon="+g.x+"&layers=B00TTFT'
+        })
+        .update('ссылка'));
+        
         return e;
     },
 

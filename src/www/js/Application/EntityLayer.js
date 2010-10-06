@@ -103,10 +103,9 @@ Application.EntityLayer = OpenLayers.Class(OpenLayers.Layer.Vector, {
      */
     getFeature: function(entity) {
         if (entity instanceof Array) entity = entity.value;
-        var ge = OSM.Geometry.getGeometry(entity, this.osm);
-        var g = ge.getGeometry();
+        var g = entity.getGeometry(this.osm);
         var gt = this.map.transformTo(g);
-        var feature = new OpenLayers.Feature.Vector(gt, {gEntity: ge, entity: entity });
+        var feature = new OpenLayers.Feature.Vector(gt, {entity: entity});
         feature.entity = entity;
         return feature;
     },
@@ -117,15 +116,8 @@ Application.EntityLayer = OpenLayers.Class(OpenLayers.Layer.Vector, {
      */
     zoomToEntity: function(entity) {
         var feature = this.getFeatureBy('entity', entity);
-        var ge = undefined;
-        if (feature) {
-            ge = feature.attributes.gEntity;
-        } else {
-            ge = OSM.Geometry.getGeometry(entity, this.osm);
-        }
-        var p = ge
-            .getGeometry()
-            .getCentroid();
+        var ge = entity.getGeometry(this.osm);
+        var p = ge.getCentroid();
         this.map.setMapCenter(new OpenLayers.LonLat(p.x, p.y), 17);
         if (feature) {
             this.selectControl.unselectAll();

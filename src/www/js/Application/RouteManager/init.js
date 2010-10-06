@@ -44,7 +44,7 @@ Application.RouteManager = Class.create({
             if (this.popupHideTimer) {
                 window.clearInterval(this.popupHideTimer);
             }
-            this.showAmenityTooltip(feature.attributes.gEntity);
+            this.showAmenityTooltip(feature.attributes.entity);
         }.bind(this);
 
         this.layer.selectControl.onUnhighlight  = function() {

@@ -97,11 +97,7 @@ var OSM = Class.create({
         'OSM/Node.js',
         'OSM/Way.js',
         'OSM/Relation.js',
-        'OSM/Geometry/Geometry.js',
-        'OSM/Geometry/Entity.js',
-        'OSM/Geometry/Node.js',
-        'OSM/Geometry/Way.js',
-        'OSM/Geometry/Relation.js'
+        'OSM/Geometry.js'
     ];
     loadLinkedScripts('OSM/OSM.js', jsfiles);
 })();

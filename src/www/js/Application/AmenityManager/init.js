@@ -44,7 +44,7 @@ Application.AmenityManager = Class.create({
             if (this.popupHideTimer) {
                 window.clearInterval(this.popupHideTimer);
             }
-            this.showAmenityTooltip(feature.attributes.gEntity);
+            this.showAmenityTooltip(feature.attributes.entity);
         }.bind(this);
 
         this.layer.selectControl.onUnhighlight  = function() {
@@ -109,15 +109,15 @@ Application.AmenityManager = Class.create({
      * Show tooltip with amenity details.
      *
      * @private
-     * @param {OSM.Geometry.Entity} gAmenity
+     * @param {OSM.Entity} amenity
      * @type void
      */
-    showAmenityTooltip: function(gAmenity) {
-        if(gAmenity == null) {
+    showAmenityTooltip: function(amenity) {
+        if(amenity == null) {
             if(this.popup) this.map.removePopup(this.popup);
             return;
         }
-        this.popup = new Application.AmenityManager.Popup(this.map, gAmenity, {
+        this.popup = new Application.AmenityManager.Popup(this.map, amenity, this.osm, {
             zoom: function(amenity) {
                 this.layer.zoomToEntity(amenity);
             }.bind(this)
