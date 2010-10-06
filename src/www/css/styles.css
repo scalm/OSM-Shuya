@@ -82,10 +82,10 @@ input#search {
 
 
 .routeColor {
-    height: 12px;
-    width: 12px;
     display: inline-block;
     border: black 1px solid;
+    color: white;
+    padding: 2px 5px;
 }
 
 .routeManager .scrollBox,

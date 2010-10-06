@@ -118,7 +118,7 @@ Application.RouteManager = Class.create({
      * Show tooltip with route details.
      *
      * @private
-     * @param {OSM.Geometry.Entity} entity OSM entity
+     * @param {OSM.Entity} entity OSM entity
      * @type void
      */
     showTooltip: function(entity) {

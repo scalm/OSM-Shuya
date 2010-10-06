@@ -77,29 +77,23 @@ Application.RouteManager.ListView = Class.create({
 
         var color = relation.getTag("colour");
         if (color ===null) {
-            var colors = ['red', 'green', 'blue', 'yellow', 'maroon', 'navy'];
-            color = colors[Math.round(Math.random()*colors.length)];
+            color = '#000000';
         }
 
-        header.appendElement('div', {
+        var colorRef = header.appendElement('div', {
             'class' : 'routeColor',
             'style': 'background-color:'+color
         });
+        var ref = relation.getTag('ref');
+        if (ref) colorRef.update(ref);
 
         var name = relation.getTag('name');
-        var ref = relation.getTag('ref');
-        var text = "";
-        if(name!=null) {
-            text = text + name;
-            if(ref) {
-                text = text + " ("+ref+")";
-            }
-        } else {
-            if(ref)
-                text = "Маршрут "+ref;
+
+        if (name!=null) {
+            header.appendText(name);
         }
 
-        header.appendText(text);
+
 
         Object.extend(header, {
             view: this.view,
