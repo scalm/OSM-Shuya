@@ -29,7 +29,6 @@ Application.RouteManager = Class.create({
             if (this.popupHideTimer) {
                 window.clearInterval(this.popupHideTimer);
             }
-            console.log(this.layer.dontPopup);
             if (!this.layer.dontPopup)
                 this.showTooltip(feature.attributes.entity);
         }.bind(this);
